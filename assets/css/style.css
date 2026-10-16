@@ -327,3 +327,46 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff453a}
   .mail{font-size:17px}
 }
 @media (max-width:380px){.display{font-size:30px}.hero-name{font-size:32px}.tcard{width:252px}}
+
+/* compact phones: second, tighter pass (menu untouched) */
+@media (max-width:560px){
+  :root{--radius:20px}
+  .container,.container.narrow{width:min(1200px,100% - 32px)}
+  .section{padding:44px 0}
+  .shead{margin-bottom:20px}
+  .eyebrow{font-size:14px}
+  .display{font-size:clamp(26px,7.6vw,32px)}
+  .display.xl,.ptitle{font-size:clamp(28px,8.4vw,36px)}
+  .hero{padding:44px 0 40px}
+  .hero-hi{font-size:15px}
+  .hero-name{font-size:clamp(28px,8.6vw,36px)}
+  .hero-role{font-size:16px;margin-bottom:12px}
+  .hero .lead,.lead,.lead.big{font-size:14px;line-height:1.5}
+  .btn-lg{font-size:14px;padding:11px 18px}
+  .textlink{font-size:14px}
+  .marquee{padding:14px 0}.marquee-set a{font-size:14px}
+  .bcard,.bcard.wide{padding:18px;border-radius:20px}
+  .bcard .ibox{width:42px;height:42px;border-radius:13px}.bcard .ibox svg{width:22px;height:22px}
+  .bcard h3,.bcard.third h3{font-size:17px;margin:12px 0 4px}
+  .bcard p{font-size:13px;line-height:1.45}
+  .pbody{padding:16px}.pbody h3{font-size:18px}.pbody p{font-size:13px}
+  .pcat,.tag{font-size:11px}
+  .tcard{width:224px;padding:16px;gap:10px;border-radius:18px}
+  .tcard blockquote{font-size:13px;line-height:1.45}
+  .tcard img.avatar,.avatar{width:36px;height:36px;font-size:12px}
+  .author strong{font-size:13px}.author span:not(.avatar){font-size:11px}
+  .tick-set{gap:10px;padding-right:10px}
+  .pf{height:200px}.proof .tick-set{gap:10px;padding-right:10px}
+  .skill{padding:18px;border-radius:18px}.skill h3{font-size:16px}.skill p{font-size:13px}
+  .role{padding:20px 0}.period{font-size:13px}.rbody h3{font-size:18px}.rtitle{font-size:14px}.rbody li{font-size:13px}
+  .quote{font-size:19px}
+  .cta{padding:48px 0}
+  .formcard{padding:18px}.formcard h2,.faqh{font-size:20px}
+  .faq{padding:0 16px;border-radius:14px}.faq summary{font-size:14px;padding:14px 0}.faq p{font-size:13px}
+  .feats li{font-size:14px;padding:14px 16px 14px 38px;border-radius:14px}.feats li::before{left:16px}
+  .pager strong{font-size:17px}
+  .footer{padding:36px 0 24px}.foot-logo{font-size:20px}
+  .mail{font-size:15px}
+  input,textarea,select{font-size:16px}
+}
+@media (max-width:380px){.tcard{width:208px}.pf{height:180px}}
