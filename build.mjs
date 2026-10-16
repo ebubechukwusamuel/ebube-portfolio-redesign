@@ -114,7 +114,7 @@ const VIS = {
 // ---------- HOME ----------
 function home() {
   const marquee = PROJECTS.map((p) => `<a href="/projects/${p.slug}">${esc(p.title)}</a>`).join('');
-  const bento = SERVICES.map((s, i) => `<article class="svc reveal" style="--d:${(i % 4) * 0.06}s"><span class="ibox" style="background:linear-gradient(135deg,${s.colors[0]},${s.colors[1]})">${icon(s.icon)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join('');
+  const bento = SERVICES.map((s, i) => `<article class="bcard ${s.size} ${s.dark ? 'dark' : ''} reveal" style="--d:${(i % 3) * 0.08}s;--c1:${s.colors[0]};--c2:${s.colors[1]}"><span class="ibox" style="background:linear-gradient(135deg,${s.colors[0]},${s.colors[1]})">${icon(s.icon)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join('');
   const jsonld = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Person', name: SITE.name, jobTitle: SITE.title, url: SITE.url,
     email: SITE.email, address: { '@type': 'PostalAddress', addressCountry: 'NG' }, sameAs: SITE.social.map((s) => s.url),
@@ -132,7 +132,7 @@ function home() {
 
 <section class="section light" id="services"><div class="container">
 <div class="shead reveal"><p class="eyebrow">My Services</p><h2 class="display">What I do.</h2></div>
-<div class="svc-grid">${bento}</div></div></section>
+<div class="bento">${bento}</div></div></section>
 
 <section class="section dark" id="work"><div class="container">
 <div class="shead reveal"><p class="eyebrow">Some of my Work</p><h2 class="display">Projects.</h2></div>
@@ -188,8 +188,7 @@ ${ABOUT.bio.map((b) => `<p class="lead left">${esc(b)}</p>`).join('')}
 
 ${proofSec}
 
-<section class="section light"><div class="container"><div class="trio">
-<article class="skill reveal"><p class="eyebrow sm">Education</p>${ABOUT.education.map(([a, b]) => `<h3>${esc(a)}</h3><p>${esc(b)}</p>`).join('')}</article>
+<section class="section light"><div class="container"><div class="trio duo">
 <article class="skill reveal" style="--d:.08s"><p class="eyebrow sm">Languages</p><h3>${esc(ABOUT.languages)}</h3></article>
 <article class="skill reveal" style="--d:.16s"><p class="eyebrow sm">Interests</p><h3>${esc(ABOUT.interests)}</h3></article>
 </div></div></section>

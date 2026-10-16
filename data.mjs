@@ -18,21 +18,21 @@ export const SITE = {
 };
 
 export const SERVICES = [
-  { id: 'presentation', title: 'Presentation Design', icon: 'slides', colors: ['#2997ff', '#5e5ce6'],
+  { id: 'presentation', size: 'wide', dark: true, title: 'Presentation Design', icon: 'slides', colors: ['#2997ff', '#5e5ce6'],
     text: 'Pitch, corporate and consulting decks in PowerPoint, Keynote and Google Slides that tell a clear story.' },
-  { id: 'brand', title: 'Brand Identity', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
+  { id: 'brand', size: 'wide', dark: false, title: 'Brand Identity', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
     text: 'Logos, color palettes, typography and guidelines that make a business memorable and consistent.' },
-  { id: 'graphic', title: 'Graphic Design', icon: 'image', colors: ['#ff9f0a', '#ff375f'],
+  { id: 'graphic', size: 'third', dark: false, title: 'Graphic Design', icon: 'image', colors: ['#ff9f0a', '#ff375f'],
     text: 'Flyers, banners, social media graphics and event materials for print and digital.' },
-  { id: 'data', title: 'Infographics & Data Visuals', icon: 'chart', colors: ['#30d158', '#0a84ff'],
+  { id: 'data', size: 'third', dark: true, title: 'Infographics & Data Visuals', icon: 'chart', colors: ['#30d158', '#0a84ff'],
     text: 'Complex data and ideas turned into clear infographics and visual stories people understand.' },
-  { id: 'uiux', title: 'UI/UX & Web Design', icon: 'layout', colors: ['#64d2ff', '#30d158'],
+  { id: 'uiux', size: 'third', dark: false, title: 'UI/UX & Web Design', icon: 'layout', colors: ['#64d2ff', '#30d158'],
     text: 'Wireframes, prototypes and polished interface designs for websites, portfolios and stores.' },
-  { id: 'web', title: 'Web Development', icon: 'code', colors: ['#2997ff', '#5e5ce6'],
+  { id: 'web', size: 'third', dark: true, title: 'Web Development', icon: 'code', colors: ['#2997ff', '#5e5ce6'],
     text: 'Fast, responsive websites and full-stack web apps built with Next.js and TypeScript.' },
-  { id: 'mobile', title: 'Mobile Apps', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
+  { id: 'mobile', size: 'third', dark: false, title: 'Mobile Apps', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
     text: 'Cross-platform iOS and Android apps with React Native, Expo and Flutter.' },
-  { id: 'ai', title: 'AI Automation', icon: 'chat', colors: ['#30d158', '#0a84ff'],
+  { id: 'ai', size: 'third', dark: true, title: 'AI Automation', icon: 'chat', colors: ['#30d158', '#0a84ff'],
     text: 'Workflow automations and chatbots with n8n, AI and browser automation that save time.' },
 ];
 
