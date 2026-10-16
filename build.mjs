@@ -26,6 +26,20 @@ const ICONS = {
 };
 const icon = (name) => `<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
+
+function jpegSize(file) {
+  try {
+    const buf = fs.readFileSync(file); let i = 2;
+    while (i < buf.length) {
+      if (buf[i] !== 0xff) { i++; continue; }
+      const m = buf[i + 1];
+      if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) return { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7) };
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+  } catch (e) { /* ignore */ }
+  return null;
+}
+
 const NAV = [['Home', '/'], ['About', '/about'], ['Projects', '/projects'], ['Contact', '/contact']];
 
 function nav(active) {
@@ -145,7 +159,7 @@ function home() {
 
 <section class="section white"><div class="container">
 <div class="shead reveal"><p class="eyebrow">What clients say</p><h2 class="display">Kind words.</h2></div></div>
-<div class="tick" role="region" aria-label="Client testimonials"><div class="tick-track">${[0, 1].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${TESTIMONIALS.map((t) => {
+<div class="tick" data-speed="38" role="region" aria-label="Client testimonials" tabindex="0"><div class="tick-track">${[0, 1, 2].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${TESTIMONIALS.map((t) => {
   const has = fs.existsSync(path.join(ROOT, `assets/people/${t.id}.jpg`));
   const ini = t.name.split(' ').map((w) => w[0]).slice(0, 2).join('');
   const av = has ? `<img class="avatar" src="/assets/people/${t.id}.jpg" alt="${esc(t.name)}" width="56" height="56" loading="lazy" decoding="async">` : `<span class="avatar">${esc(ini)}</span>`;
@@ -169,11 +183,11 @@ function about() {
   const pitems = pf.filter((f) => /\.(jpe?g|png|webp|mp4|webm|mov)$/i.test(f) && !/-poster\./i.test(f));
   const pcards = (hid) => pitems.map((f) => /\.(mp4|webm|mov)$/i.test(f)
     ? `<figure class="pf"><video muted loop playsinline preload="metadata" ${fs.existsSync(path.join(PD, f.replace(/\.\w+$/, '-poster.jpg'))) ? `poster="/assets/proof/${f.replace(/\.\w+$/, '-poster.jpg')}"` : ''} src="/assets/proof/${f}"${hid ? ' tabindex="-1"' : ''}></video></figure>`
-    : `<figure class="pf"><img src="/assets/proof/${f}" alt="Moment from Ebubechukwu's life and work" height="720" loading="lazy" decoding="async"></figure>`).join('');
+    : (() => { const d = /\.jpe?g$/i.test(f) ? jpegSize(path.join(PD, f)) : null; return `<figure class="pf"><img src="/assets/proof/${f}" alt="Moment from Ebubechukwu's life and work" ${d ? `width="${d.w}" height="${d.h}"` : 'height="720"'} loading="lazy" decoding="async" draggable="false"></figure>`; })()).join('');
   const proofSec = pitems.length ? `
 <section class="section white"><div class="container">
 <div class="shead reveal"><p class="eyebrow">Proof of life</p><h2 class="display">Real moments.</h2></div></div>
-<div class="tick proof" role="region" aria-label="Photos and videos"><div class="tick-track">${[0, 1].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${pcards(k)}</div>`).join('')}</div></div>
+<div class="tick proof" data-speed="50" role="region" aria-label="Photos and videos" tabindex="0"><div class="tick-track">${[0, 1, 2].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${pcards(k)}</div>`).join('')}</div></div>
 </section>` : '';
   const body = `
 <section class="section dark pt-lg"><div class="container two">

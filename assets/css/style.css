@@ -269,3 +269,61 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff453a}
 .trio.duo{grid-template-columns:repeat(2,1fr)}
 @media (max-width:820px){.bcard,.bcard.wide{min-height:0;padding:28px}.bcard .ibox{margin-bottom:0}.bcard h3{margin-top:22px}}
 @media (max-width:560px){.trio.duo{grid-template-columns:1fr}}
+
+/* manual scrolling tickers */
+.tick{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;cursor:grab}
+.tick::-webkit-scrollbar{display:none}
+.tick.grab{cursor:grabbing;user-select:none}
+.tick .tick-track,.tick-track{animation:none!important}
+.tick:focus-visible{outline-offset:-3px}
+.pf img,.pf video{-webkit-user-drag:none;user-select:none}
+/* mobile sizing */
+@media (max-width:820px){
+  .tcard{width:360px;padding:28px}
+  .tick{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+}
+@media (max-width:560px){
+  :root{--radius:26px}
+  .container,.container.narrow,.nav-in{width:min(1200px,100% - 40px)}
+  .section{padding:clamp(52px,14vw,72px) 0}
+  .section.pt-lg{padding-top:44px}
+  .shead{margin-bottom:28px}
+  .eyebrow{font-size:16px}
+  .display{font-size:clamp(32px,9.4vw,40px);line-height:1.08}
+  .display.xl,.ptitle{font-size:clamp(34px,10vw,44px)}
+  .hero{padding:56px 0 52px}
+  .hero-hi{font-size:18px}
+  .hero-name{font-size:clamp(34px,10.4vw,44px);margin-bottom:12px}
+  .hero-role{font-size:19px;margin-bottom:16px}
+  .hero .lead,.lead,.lead.big{font-size:16px;line-height:1.5}
+  .hero .lead{margin-bottom:26px}
+  .btn-lg{font-size:16px;padding:13px 22px}
+  .textlink{font-size:16px}
+  .marquee{padding:20px 0}.marquee-set a{font-size:16px}.marquee-set{gap:36px;padding-right:36px}
+  .bcard,.bcard.wide{padding:22px;border-radius:24px}
+  .bcard .ibox{width:52px;height:52px;border-radius:16px}.bcard .ibox svg{width:26px;height:26px}
+  .bcard h3,.bcard.third h3{font-size:21px;margin:16px 0 6px}
+  .bcard p{font-size:15px}
+  .pbody{padding:20px}.pbody h3{font-size:22px}.pbody p{font-size:15px}
+  .tag{font-size:12px;padding:5px 11px}
+  .tcard{width:272px;padding:22px;gap:12px;border-radius:22px}
+  .tcard blockquote{font-size:15px;line-height:1.5}
+  .tcard img.avatar,.avatar{width:44px;height:44px;font-size:14px}
+  .author strong{font-size:15px}.author span:not(.avatar){font-size:13px}
+  .author{gap:12px}
+  .tick-set{gap:14px;padding-right:14px}
+  .pf{height:260px}.proof .tick-set{gap:12px;padding-right:12px}
+  .skill{padding:24px;border-radius:22px}.skill h3{font-size:19px}.skill p{font-size:15px}
+  .role{padding:26px 0}.period{font-size:15px}.rbody h3{font-size:22px}.rtitle{font-size:17px}.rbody li{font-size:15px}
+  .quote{font-size:24px}
+  .cta{padding:64px 0}
+  .formcard{padding:22px}.formcard h2,.faqh{font-size:24px}
+  .faq{padding:0 20px;border-radius:18px}.faq summary{font-size:16px;padding:18px 0}.faq p{font-size:15px}
+  .feats li{font-size:16px;padding:18px 20px 18px 44px;border-radius:18px}.feats li::before{left:20px}
+  .pager strong{font-size:20px}
+  .hero-img{margin:28px 0 8px}.pblock{margin-top:36px}
+  .footer{padding:44px 0 28px}.foot-logo{font-size:24px}
+  .nav-links{font-size:24px}
+  .mail{font-size:17px}
+}
+@media (max-width:380px){.display{font-size:30px}.hero-name{font-size:32px}.tcard{width:252px}}
