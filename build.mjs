@@ -1,5 +1,9 @@
 // Static site generator. No dependencies. Run: node build.mjs
 import fs from 'node:fs';
+
+import crypto from 'node:crypto';
+const hashFile = (f) => { try { return crypto.createHash('md5').update(fs.readFileSync(f)).digest('hex').slice(0, 8); } catch (e) { return '0'; } };
+const ASSET_V = { css: hashFile('assets/css/style.css'), js: hashFile('assets/js/main.js') };
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITE, SERVICES, PROJECTS, FILTERS, TESTIMONIALS, ABOUT, EXPERIENCE, FAQS } from './data.mjs';
@@ -94,7 +98,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=${ASSET_V.css}">
 <script>document.documentElement.className='js';</script>
 ${jsonld}
 </head>
@@ -105,7 +109,7 @@ ${nav(active)}
 ${body}
 </main>
 ${footer()}
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js?v=${ASSET_V.js}" defer></script>
 </body>
 </html>
 `;
