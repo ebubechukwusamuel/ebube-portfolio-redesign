@@ -138,12 +138,13 @@ function home() {
     email: SITE.email, address: { '@type': 'PostalAddress', addressCountry: 'NG' }, sameAs: SITE.social.map((s) => s.url),
   })}</script>`;
   const body = `
-<section class="hero"><div class="container center">
-<p class="hero-hi reveal">Hi, I'm</p>
-<h1 class="hero-name reveal" style="--d:.06s">${esc(SITE.name)}</h1>
-<p class="hero-role reveal" style="--d:.12s">${esc(SITE.title)}</p>
+<section class="hero"><div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div><div class="container hero-in">
+<p class="hero-pill reveal"><span class="live"><i></i>Open to new projects</span><span class="hp-loc">Kano, Nigeria</span></p>
+<h1 class="hero-h reveal" style="--d:.06s"><span class="sr">${esc(SITE.name)}, ${esc(SITE.title)}. </span><span class="hl l1">I design it.</span><span class="hl l2">I build it.</span><span class="hl l3">I automate it.</span></h1>
+<p class="hero-by reveal" style="--d:.14s"><strong>${esc(SITE.name)}</strong> <span>${esc(SITE.title)}</span></p>
 <p class="lead reveal" style="--d:.18s">${esc(SITE.tagline)}</p>
 <div class="hero-cta reveal" style="--d:.24s"><a class="btn btn-primary btn-lg" href="/contact">Contact Me</a><a class="textlink" href="/projects">View my work <span aria-hidden="true">&rsaquo;</span></a></div>
+<ul class="hero-stats reveal" style="--d:.3s"><li><b>5+</b><span>years designing</span></li><li><b>${PROJECTS.length}</b><span>featured projects</span></li><li><b>${SERVICES.length}</b><span>services offered</span></li><li><b>${TESTIMONIALS.length}</b><span>client reviews</span></li></ul>
 </div></section>
 
 <section class="marquee" aria-label="Selected projects"><div class="marquee-track"><div class="marquee-set">${marquee}</div><div class="marquee-set" aria-hidden="true">${PROJECTS.map((p) => `<a tabindex="-1" href="/projects/${p.slug}">${esc(p.title)}</a>`).join('')}</div></div></section>
