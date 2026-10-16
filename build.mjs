@@ -50,7 +50,7 @@ function footer() {
 </div></footer>`;
 }
 
-function layout({ title, desc, path: p, active, body, og = '/assets/projects/og-image.jpg', jsonld = '', noindex = false }) {
+function layout({ title, desc, path: p, active, body, og = '/assets/og-image.jpg', jsonld = '', noindex = false }) {
   const full = title === SITE.name ? `${SITE.name} | ${SITE.title}` : `${title} | ${SITE.name}`;
   const url = SITE.url + (p === '/' ? '' : p);
   return `<!doctype html>
@@ -68,10 +68,14 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}">
 <meta property="og:image" content="${SITE.url}${og}">
+<meta property="og:image:width" content="${og === '/assets/og-image.jpg' ? 1200 : 1600}">
+<meta property="og:image:height" content="${og === '/assets/og-image.jpg' ? 630 : 900}">
+<meta property="og:image:alt" content="${esc(full)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(full)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${SITE.url}${og}">
+<meta name="twitter:image:alt" content="${esc(full)}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -149,7 +153,7 @@ function home() {
 }).join('')}</div>`).join('')}</div></div>
 </section>
 ${cta()}`;
-  write('index.html', layout({ title: SITE.name, desc: SITE.tagline, path: '/', active: '/', body, jsonld }));
+  write('index.html', layout({ title: SITE.name, desc: SITE.description, path: '/', active: '/', body, jsonld }));
 }
 
 // ---------- ABOUT ----------

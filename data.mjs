@@ -2,11 +2,12 @@
 // Style rule: no em dashes or en dashes anywhere (the build fails if one slips in).
 
 export const SITE = {
-  url: 'https://ebubesamuel.online',
+  url: 'https://ebubechukwu-portfolio.vercel.app', // change to https://ebubesamuel.online when the domain is switched,
   name: 'Ebubechukwu Samuel',
   short: 'Ebube.',
   title: 'Freelance Designer & Developer',
   tagline: 'AI-powered design & dev. Building in public. Hit me up if you need a site, brand, or AI solution.',
+  description: 'Ebubechukwu Samuel is a freelance designer and developer in Nigeria. Presentation design, brand identity, web and mobile apps, and AI automation. See his work and get in touch.',
   email: 'ebubechkwu.samuel.com@gmail.com',
   social: [
     { label: 'GitHub', url: 'https://github.com/ebubechukwusamuel' },
