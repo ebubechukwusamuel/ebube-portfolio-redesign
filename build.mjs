@@ -19,6 +19,9 @@ const ICONS = {
   phone: '<rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/>',
   palette: '<circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.2" fill="#fff"/><circle cx="12" cy="7.5" r="1.2" fill="#fff"/><circle cx="16" cy="10" r="1.2" fill="#fff"/><path d="M12 21c-1.5 0-2-1.5-1-2.5s1-2-1-2.5"/>',
   chat: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/>',
+  slides: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  image: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="1.6"/><path d="m21 15-4.5-4.5L6 21"/>',
+  chart: '<path d="M4 20V10M10 20V4M16 20v-7M2 20h20"/>',
   layout: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M9 9v11"/>',
 };
 const icon = (name) => `<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
@@ -91,7 +94,7 @@ ${footer()}
 }
 
 const pcard = (p, i = 0) => `<a class="pcard reveal" style="--d:${(i % 2) * 0.08}s" href="/projects/${p.slug}" data-filters="${p.filters.join(' ')}">
-<div class="pimg"><img src="/assets/projects/${p.slug}.jpg" alt="${esc(p.title)} cover illustration" width="1600" height="900" loading="lazy" decoding="async"></div>
+<div class="pimg"><img src="/assets/projects/${p.slug}.jpg" alt="${esc(p.title)} ${p.shot ? 'project cover' : 'cover illustration'}" width="1600" height="900" loading="lazy" decoding="async"></div>
 <div class="pbody"><span class="eyebrow">${esc(p.category)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>
 <div class="tags">${p.tags.slice(0, 2).map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div></div></a>`;
 
@@ -111,12 +114,7 @@ const VIS = {
 // ---------- HOME ----------
 function home() {
   const marquee = PROJECTS.map((p) => `<a href="/projects/${p.slug}">${esc(p.title)}</a>`).join('');
-  const bento = SERVICES.map((s, i) => {
-    const ai = s.id === 'ai' ? `<div class="chat" aria-hidden="true"><span class="live"><i></i>AI Active</span><div class="bubble">How can I help automate your workflow?</div><div class="typing"><i></i><i></i><i></i></div></div>` : '';
-    return `<article class="bcard ${s.size} ${s.dark ? 'dark' : ''} reveal" style="--d:${(i % 3) * 0.08}s">
-<div class="bvis ${s.id}" aria-hidden="true">${VIS[s.id] || ''}</div>
-<div class="btxt"><span class="ibox" style="background:linear-gradient(135deg,${s.colors[0]},${s.colors[1]})">${icon(s.icon)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div></article>`;
-  }).join('');
+  const bento = SERVICES.map((s, i) => `<article class="svc reveal" style="--d:${(i % 4) * 0.06}s"><span class="ibox" style="background:linear-gradient(135deg,${s.colors[0]},${s.colors[1]})">${icon(s.icon)}</span><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></article>`).join('');
   const jsonld = `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Person', name: SITE.name, jobTitle: SITE.title, url: SITE.url,
     email: SITE.email, address: { '@type': 'PostalAddress', addressCountry: 'NG' }, sameAs: SITE.social.map((s) => s.url),
@@ -134,7 +132,7 @@ function home() {
 
 <section class="section light" id="services"><div class="container">
 <div class="shead reveal"><p class="eyebrow">My Services</p><h2 class="display">What I do.</h2></div>
-<div class="bento">${bento}</div></div></section>
+<div class="svc-grid">${bento}</div></div></section>
 
 <section class="section dark" id="work"><div class="container">
 <div class="shead reveal"><p class="eyebrow">Some of my Work</p><h2 class="display">Projects.</h2></div>
@@ -220,7 +218,7 @@ function projectPages() {
 <article class="section dark pt-md"><div class="container narrow">
 <a class="textlink back" href="/projects"><span aria-hidden="true">&lsaquo;</span> Back to projects</a>
 <header class="phead reveal"><p class="eyebrow">${esc(p.category)}</p><h1 class="display ptitle">${esc(p.title)}</h1><p class="lead left big">${esc(p.overview)}</p>${btns ? `<div class="pbtns">${btns}</div>` : ''}</header>
-<figure class="hero-img reveal"><img src="/assets/projects/${p.slug}.jpg" alt="${esc(p.title)} cover illustration" width="1600" height="900" decoding="async"><figcaption>Cover illustration.${design && p.links.length ? ' See the full project on Behance.' : ''}</figcaption></figure>
+<figure class="hero-img reveal"><img src="/assets/projects/${p.slug}.jpg" alt="${esc(p.title)} ${p.shot ? 'project cover' : 'cover illustration'}" width="1600" height="900" decoding="async"><figcaption>${p.shot ? '' : 'Cover illustration.'}${design && p.links.length ? ' See the full project on Behance.' : ''}</figcaption></figure>
 <section class="pblock reveal"><h2>${design ? 'Focus areas' : 'Tech stack'}</h2><div class="tags big">${p.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>
 <section class="pblock reveal"><h2>Key features</h2><ul class="feats">${p.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></section>
 <nav class="pager reveal" aria-label="More projects">

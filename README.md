@@ -43,5 +43,5 @@ Open http://localhost:4173 (the contact form needs the Vercel function, so it on
 
 ## Worth a quick look
 
-- Duty lines for Yenaga, Chapman, Treasure Life Family Church, Impact Orphans Project and Cresol were drafted from the role titles. Edit them to match what you actually did.
+- Duty lines for Yinaga, Chapman, Treasure Life Family Church, Impact Orphans Project and Cresol were drafted from the role titles. Edit them to match what you actually did.
 - Cresol shows "Past role" and Elijah Adegun shows "Website project" because no dates were given.
