@@ -159,7 +159,7 @@ function home() {
 
 <section class="section white"><div class="container">
 <div class="shead reveal"><p class="eyebrow">What clients say</p><h2 class="display">Kind words.</h2></div></div>
-<div class="tick" data-speed="38" role="region" aria-label="Client testimonials" tabindex="0"><div class="tick-track">${[0, 1, 2].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${TESTIMONIALS.map((t) => {
+<div class="tick" data-speed="20" role="region" aria-label="Client testimonials" tabindex="0"><div class="tick-track">${[0, 1, 2].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${TESTIMONIALS.map((t) => {
   const has = fs.existsSync(path.join(ROOT, `assets/people/${t.id}.jpg`));
   const ini = t.name.split(' ').map((w) => w[0]).slice(0, 2).join('');
   const av = has ? `<img class="avatar" src="/assets/people/${t.id}.jpg" alt="${esc(t.name)}" width="56" height="56" loading="lazy" decoding="async">` : `<span class="avatar">${esc(ini)}</span>`;
@@ -187,7 +187,7 @@ function about() {
   const proofSec = pitems.length ? `
 <section class="section white"><div class="container">
 <div class="shead reveal"><p class="eyebrow">Proof of life</p><h2 class="display">Real moments.</h2></div></div>
-<div class="tick proof" data-speed="50" role="region" aria-label="Photos and videos" tabindex="0"><div class="tick-track">${[0, 1, 2].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${pcards(k)}</div>`).join('')}</div></div>
+<div class="tick proof" data-speed="26" role="region" aria-label="Photos and videos" tabindex="0"><div class="tick-track">${[0, 1, 2].map((k) => `<div class="tick-set"${k ? ' aria-hidden="true"' : ''}>${pcards(k)}</div>`).join('')}</div></div>
 </section>` : '';
   const body = `
 <section class="section dark pt-lg"><div class="container two">

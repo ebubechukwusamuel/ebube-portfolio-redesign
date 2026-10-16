@@ -370,3 +370,6 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff453a}
   input,textarea,select{font-size:16px}
 }
 @media (max-width:380px){.tcard{width:208px}.pf{height:180px}}
+
+@media (max-width:560px){.pf{height:100px;border-radius:8px}.proof .tick-set{gap:8px;padding-right:8px}}
+@media (max-width:380px){.pf{height:100px}}

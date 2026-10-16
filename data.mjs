@@ -116,15 +116,15 @@ export const FILTERS = [
 
 export const TESTIMONIALS = [
   { id: 'williams', name: 'Williams Tomide Sodunke', role: 'GTMe & AI Product Marketing Manager, 2x TEDx Speaker',
-    quote: 'I am thrilled to recommend Ebubechukwu Samuel, an amazing graphic designer who has contributed significantly to our team at LinkedIn Local Nigeria. As our go-to designer, he constantly generated amazing, high-quality visuals in record time, often completing tasks faster than we could have imagined but never sacrificing innovation.' },
+    quote: "An amazing graphic designer who contributed significantly to our team at LinkedIn Local Nigeria, constantly delivering high-quality visuals in record time without sacrificing innovation." },
   { id: 'enibo', name: 'Enibo Albert', role: 'Founder and Executive Director, Enibo Albert Charity Foundation',
-    quote: "I worked with him on an infographic for an article about Nigeria's Out-of-School Children Crisis, by the Enibo Albert Charity Foundation. His design clearly showed the facts and urgency of the issue, making the data easy to understand. His attention to detail, creativity, and quality were evident throughout the project. He didn't just make a graphic, he told a story." },
+    quote: "His infographic on Nigeria's Out-of-School Children Crisis made the data clear and urgent. He didn't just make a graphic, he told a story." },
   { id: 'elijah', name: 'Elijah Adegun', role: 'Systems Architect and AgTech Founder',
     quote: 'Thanks so much for the great work done on the logo and banner design. Within a short period of time you delivered. More work to come.' },
   { id: 'isaac', name: 'Mr. Isaac', role: 'Client, janitorial cleaning services',
-    quote: "I'm truly impressed with the design created for my janitorial cleaning services. The layout is clean and professional, with great use of color that draws attention without being overwhelming. The designer effectively highlighted our key services, making the information easy to read and visually appealing. The imagery and branding feel friendly and trustworthy, perfect for our target audience. It's clear a lot of thought went into the details, and I couldn't be happier with the result. I highly recommend this designer for quality and creativity." },
+    quote: "Truly impressed with the design for my janitorial cleaning services. A clean, professional layout with great color and trustworthy branding. I couldn't be happier." },
   { id: 'zeeky', name: 'Zeeky Stitches', role: 'Client',
-    quote: 'This flyer for Zeeky Stitches looks vibrant, professional and eye catching. Good job overall. I commend your patience in dealing with clients. Trust me, you are recommendable. Keep soaring high.' },
+    quote: "This flyer looks vibrant, professional and eye catching. Good job. I commend your patience in dealing with clients. You are recommendable. Keep soaring high." },
   { id: 'olu', name: 'Olu Segun', role: 'Client',
     quote: 'Ebube has designed flyers and built a website for me; he is very creative and pays attention to detail. I recommend him any day.' },
 ];
