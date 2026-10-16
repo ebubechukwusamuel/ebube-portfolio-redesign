@@ -1,0 +1,197 @@
+// All site content lives here. Edit this file, then run: node build.mjs
+// Style rule: no em dashes or en dashes anywhere (the build fails if one slips in).
+
+export const SITE = {
+  url: 'https://ebubesamuel.online',
+  name: 'Ebubechukwu Samuel',
+  short: 'Ebube.',
+  title: 'Freelance Designer & Developer',
+  tagline: 'AI-powered design & dev. Building in public. Hit me up if you need a site, brand, or AI solution.',
+  email: 'ebubechkwu.samuel.com@gmail.com',
+  social: [
+    { label: 'GitHub', url: 'https://github.com/ebubechukwusamuel' },
+    { label: 'LinkedIn', url: 'https://linkedin.com/in/ebubechukwusamuel' },
+    { label: 'X', url: 'https://x.com/ebubechukwu_sam' },
+    { label: 'Instagram', url: 'https://www.instagram.com/ebubechukwu.sam/' },
+    { label: 'Behance', url: 'https://www.behance.net/ebubecsamuel' },
+  ],
+};
+
+export const SERVICES = [
+  { id: 'web', title: 'Web Development', dark: true, size: 'wide', icon: 'code', colors: ['#2997ff', '#5e5ce6'],
+    text: 'Full-stack web apps built with Next.js, TypeScript, and modern frameworks, from landing pages to complex platforms with AI-powered features.' },
+  { id: 'mobile', title: 'Mobile Apps', dark: false, size: 'wide', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
+    text: 'Cross-platform mobile applications with React Native, Expo, and Flutter. iOS and Android from a single codebase with native performance.' },
+  { id: 'brand', title: 'Brand Identity', dark: false, size: 'third', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
+    text: 'Complete brand systems: logos, color palettes, typography, and guidelines that make businesses memorable and recognizable.' },
+  { id: 'ai', title: 'AI Automation', dark: true, size: 'third', icon: 'chat', colors: ['#30d158', '#0a84ff'],
+    text: 'Smart automations with n8n, AI, and browser automation. Workflow automation, data processing, and intelligent chatbots that save time and scale operations.' },
+  { id: 'uiux', title: 'UI/UX & Web Design', dark: false, size: 'third', icon: 'layout', colors: ['#64d2ff', '#30d158'],
+    text: 'User-centered interface design: wireframes, prototypes, and pixel-perfect designs for web and mobile, from portfolios to e-commerce stores.' },
+];
+
+export const PROJECTS = [
+  { slug: 'kredo', title: 'Kredo', category: 'Development', filters: ['web'],
+    summary: 'All-in-one freelancer OS: proposals, contracts, invoices, time tracking, and client portal in one unified app.',
+    overview: 'Replaces 5+ tools freelancers juggle with one seamless experience. One tool covers proposals, e-signature contracts, invoicing with Paystack and Stripe, time tracking, expense management, and a client portal for collaboration.',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Paystack', 'Stripe'],
+    features: ['Unified dashboard replacing 5+ freelance tools', 'Proposal and contract generation with e-signatures', 'Invoice creation with Paystack & Stripe payment processing', 'Time tracking and expense management', 'Client portal for project collaboration and file sharing'],
+    links: [{ label: 'Live Site', url: 'https://kredo-gray.vercel.app' }] },
+  { slug: 'spyglass', title: 'Spyglass', category: 'Development', filters: ['ai'],
+    summary: 'Natural language Q&A for any codebase. Index once, ask questions with source citations.',
+    overview: 'CLI tool published on npm that indexes any codebase locally using vector embeddings. It walks project files, chunks at function boundaries, embeds via Ollama (local) or OpenAI (cloud), and stores vectors in SQLite.',
+    tags: ['Node.js', 'TypeScript', 'RAG', 'SQLite', 'OpenAI', 'Ollama', 'CLI'],
+    features: ['Indexes codebases at function boundaries for precise answers', 'Supports both local (Ollama) and cloud (OpenAI) embeddings', 'Answers include source file and line number citations', 'Published as @mazion/spyglass on npm', 'Built with Node.js + Commander for a polished CLI experience'],
+    links: [{ label: 'Source Code', url: 'https://github.com/ebubechukwusamuel/spyglass' }] },
+  { slug: 'flowtrack', title: 'FlowTrack', category: 'Development', filters: ['web'],
+    summary: 'Project management with Kanban boards, team chat, voice and video calls, and analytics. Simple for freelancers, powerful for teams.',
+    overview: 'A full-featured project management platform covering Kanban boards, task tracking, team management, activity feeds, chat, video calls, analytics, and calendar views.',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'WebRTC', 'Framer Motion'],
+    features: ['Customizable drag-and-drop Kanban boards', 'Team chat with voice and video calls', 'Project analytics dashboard', 'Calendar and submission review workflows', 'Role-based access control'],
+    links: [{ label: 'Live Site', url: 'https://flowstarck.vercel.app' }] },
+  { slug: 'twitter-automation', title: 'Twitter/X Automation', category: 'Development', filters: ['ai'],
+    summary: 'Browser-based Twitter/X automation using Playwright. Posts tweets, manages content strategy, and publishes from markdown files without API keys.',
+    overview: 'Automated Twitter posting for @ebubechukwu_sam using browser-based automation via Playwright (no API keys needed). It logs into x.com in an existing Chrome session, reads posts from markdown files, and publishes them.',
+    tags: ['Playwright', 'Automation', 'Groq AI', 'Browser Automation', 'Node.js'],
+    features: ['Browser-based automation via Playwright, no API keys required', 'Post management via markdown files in posts/ directory', 'AI-generated content using Groq SDK for varied posting', 'Content strategy: services, building in public, design/dev insights', 'Runs in existing Chrome session via PlayWriter extension'],
+    links: [{ label: 'Source Code', url: 'https://github.com/ebubechukwusamuel/twitter-automation' }] },
+  { slug: 'linkedin-optimizer', title: 'LinkedIn Profile Optimizer', category: 'Development', filters: ['ai'],
+    summary: 'AI-powered LinkedIn optimization workflow. Analyzes profiles, rewrites every section, and generates before and after reports.',
+    overview: 'An automated n8n workflow scrapes a LinkedIn profile with Playwright, uses AI to analyze each section, and rewrites the headline, about, experience, and skills. It then produces a before and after report with SEO keyword impact analysis.',
+    tags: ['n8n', 'OpenAI', 'Playwright', 'Google Drive', 'Automation'],
+    features: ['AI analysis of the headline, about, experience, and skills sections', 'Before and after comparison report with SEO keyword impact', 'Automated delivery to Google Drive for client handoff', 'End-to-end no-code automation with error handling'],
+    links: [] },
+  { slug: 'mazion-brand', title: 'Mazion Brand Identity', category: 'Design', filters: ['brand', 'design'],
+    summary: 'Complete brand identity system for a design & development agency: logo, palette, typography, and guidelines.',
+    overview: 'Complete brand identity system for a design & development agency: logo, palette, typography, and guidelines.',
+    tags: ['Brand Identity', 'Logo Design', 'Visual Identity', 'Typography'],
+    features: ['Full brand identity system including primary and secondary logos', 'Curated color palette with light and dark mode applications', 'Typography system with header and body pairings', 'Brand guidelines document with usage rules and examples'],
+    links: [{ label: 'View on Behance', url: 'https://www.behance.net/gallery/242177593/Mazion-Brand-Identity' }] },
+  { slug: 'japalearn', title: 'JapaLearn Brand & UI', category: 'Design', filters: ['design'],
+    summary: 'Brand identity and mobile-first UI design for a language learning platform.',
+    overview: 'Brand identity and mobile-first UI design for a language learning platform.',
+    tags: ['UI/UX Design', 'Branding', 'EdTech', 'Mobile Design'],
+    features: ['Brand identity including logo, color system, and iconography', 'Mobile-first interface design with onboarding flow', 'Lesson progression UI and gamification elements', 'Design system with reusable components'],
+    links: [{ label: 'View on Behance', url: 'https://www.behance.net/gallery/245222745/JapaLearn-Designs' }] },
+  { slug: 'tobam-group', title: 'Tobam Group', category: 'Design', filters: ['brand', 'design'],
+    summary: 'Corporate brand identity for a business group: professional, trustworthy, and modern.',
+    overview: 'Corporate brand identity for a business group: professional, trustworthy, and modern.',
+    tags: ['Brand Identity', 'Corporate Design', 'Logo Design'],
+    features: ['Professional logo suite with lockups and variations', 'Corporate color palette and typography system', 'Stationery design (business cards, letterhead, envelopes)', 'Brand guidelines for consistent application'],
+    links: [{ label: 'View on Behance', url: 'https://www.behance.net/gallery/243149555/Tobam-Group-work' }] },
+  { slug: 'enibo-albert', title: 'Enibo Albert Charity Foundation', category: 'Design', filters: ['brand', 'design'],
+    summary: 'Brand identity and visual design for a charitable foundation with a warm, compassionate feel.',
+    overview: 'Brand identity and visual design for a charitable foundation with a warm, compassionate feel.',
+    tags: ['Brand Identity', 'Non-profit', 'Social Impact', 'Visual Identity'],
+    features: ['Warm, approachable brand identity for a non-profit', 'Logo design with meaningful symbolism', 'Color palette evoking trust and compassion', 'Application examples including brochures and social media'],
+    links: [{ label: 'View on Behance', url: 'https://www.behance.net/gallery/242181621/Enibo-Albert-Charity-Foundation-ProJect' }] },
+  { slug: 'linkedin-local-nigeria', title: 'LinkedIn Local Nigeria', category: 'Design', filters: ['brand', 'design'],
+    summary: 'Brand visuals for the LinkedIn Local Nigeria community, connecting professionals across the country.',
+    overview: 'Brand visuals for the LinkedIn Local Nigeria community, connecting professionals across the country.',
+    tags: ['Brand Identity', 'Community', 'Events', 'Social Media'],
+    features: ['Event branding for professional networking gatherings', 'Social media templates and promotional materials', 'Consistent visual language across all touchpoints'],
+    links: [{ label: 'View on Behance', url: 'https://www.behance.net/gallery/242181243/LinkedIn-Local-Nigeria-(LLN)-Project' }] },
+  { slug: 'logofolio-2024', title: 'LOGOFOLIO 2024', category: 'Design', filters: ['brand', 'design'],
+    summary: 'Curated collection of logo designs and brand marks from 2024, spanning multiple industries and styles.',
+    overview: 'Curated collection of logo designs and brand marks from 2024, spanning multiple industries and styles.',
+    tags: ['Logo Design', 'Branding', 'Portfolio', 'Typography'],
+    features: ['20+ logo designs across various industries', 'Range of styles from minimalist to illustrative', 'Each logo presented with concept and application context'],
+    links: [{ label: 'View on Behance', url: 'https://www.behance.net/gallery/218454879/LOGOFOLIO-2024' }] },
+];
+
+export const FILTERS = [
+  { key: 'all', label: 'All' },
+  { key: 'web', label: 'Web Apps' },
+  { key: 'ai', label: 'AI & Automation' },
+  { key: 'brand', label: 'Brand Identity' },
+  { key: 'design', label: 'Design' },
+];
+
+export const TESTIMONIALS = [
+  { id: 'williams', name: 'Williams Tomide Sodunke', role: 'GTMe & AI Product Marketing Manager, 2x TEDx Speaker',
+    quote: 'I am thrilled to recommend Ebubechukwu Samuel, an amazing graphic designer who has contributed significantly to our team at LinkedIn Local Nigeria. As our go-to designer, he constantly generated amazing, high-quality visuals in record time, often completing tasks faster than we could have imagined but never sacrificing innovation.' },
+  { id: 'enibo', name: 'Enibo Albert', role: 'Founder and Executive Director, Enibo Albert Charity Foundation',
+    quote: "I worked with him on an infographic for an article about Nigeria's Out-of-School Children Crisis, by the Enibo Albert Charity Foundation. His design clearly showed the facts and urgency of the issue, making the data easy to understand. His attention to detail, creativity, and quality were evident throughout the project. He didn't just make a graphic, he told a story." },
+  { id: 'elijah', name: 'Elijah Adegun', role: 'Systems Architect and AgTech Founder',
+    quote: 'Thanks so much for the great work done on the logo and banner design. Within a short period of time you delivered. More work to come.' },
+  { id: 'isaac', name: 'Mr. Isaac', role: 'Client, janitorial cleaning services',
+    quote: "I'm truly impressed with the design created for my janitorial cleaning services. The layout is clean and professional, with great use of color that draws attention without being overwhelming. The designer effectively highlighted our key services, making the information easy to read and visually appealing. The imagery and branding feel friendly and trustworthy, perfect for our target audience. It's clear a lot of thought went into the details, and I couldn't be happier with the result. I highly recommend this designer for quality and creativity." },
+  { id: 'zeeky', name: 'Zeeky Stitches', role: 'Client',
+    quote: 'This flyer for Zeeky Stitches looks vibrant, professional and eye catching. Good job overall. I commend your patience in dealing with clients. Trust me, you are recommendable. Keep soaring high.' },
+  { id: 'olu', name: 'Olu Segun', role: 'Client',
+    quote: 'Ebube has designed flyers and built a website for me; he is very creative and pays attention to detail. I recommend him any day.' },
+];
+
+export const ABOUT = {
+  bio: [
+    "Hi there! I'm Ebube, a freelance designer and developer based in Nigeria. I help businesses, brands, and founders bring their ideas to life, from brand identity and web design to full-stack web apps and mobile applications.",
+    "My work sits at the intersection of design and technology. I believe great products are built at the boundary of bold visual thinking and solid engineering, and that's where I operate. Whether it's crafting a brand identity, building a web platform, or automating workflows with AI, I'm here to deliver results.",
+    "Let's work together to build something great. Get in touch, and let's make it happen!",
+  ],
+  skills: [
+    ['Presentation Design', 'PowerPoint, Keynote, and Google Slides decks built to corporate and consulting standards.'],
+    ['Adobe Creative Suite', 'Photoshop and Illustrator for brand, print, and digital work.'],
+    ['Data Visualization', 'Turning complex data into clear infographics and visual stories.'],
+    ['Brand Consistency', 'Design systems that keep every touchpoint on brand.'],
+    ['Visual Storytelling', 'Corporate decks and campaigns that carry a clear narrative.'],
+    ['Collaboration', 'Clear communication with stakeholders, teams, and clients.'],
+  ],
+  education: [
+    ['B Eng. Automotive Engineering', 'Bayero University Kano, in view'],
+    ['Senior School Certificate, 2022', 'ECWA Aro Restoration College, Kano'],
+  ],
+  languages: 'English, Igbo',
+  interests: 'Research, travelling, music and photography',
+};
+
+// Roles written from the CV plus the roles given in chat. Duty lines marked (draft) were
+// written from the role title and should be checked and edited to match what you actually did.
+export const EXPERIENCE = [
+  { period: '2026', org: 'Yenaga', role: 'Lead Graphic Designer', points: [
+    'Lead the graphic design direction for the brand and set the visual standard for its campaigns and communications.',
+    'Design marketing visuals, social media graphics, and presentation materials across digital and print.',
+    'Keep every output consistent with the brand guidelines.'] },
+  { period: '2026', org: 'Chapman', role: 'Lead Graphic Designer', points: [
+    "Lead the graphic design direction and own the visual quality of the brand's communications.",
+    'Design campaign visuals, social media content, and presentation materials.',
+    'Maintain a consistent visual identity across all channels.'] },
+  { period: '2025', org: 'Enibo Albert Charity Foundation', role: 'Visual Designer', points: [
+    'Designed high-impact presentation decks, banners, and webinar assets for large-scale campaigns.',
+    'Translated complex ideas into engaging visual narratives to support advocacy and communication goals.',
+    'Ensured consistency across all digital and print materials.'] },
+  { period: '2025', org: 'BNM Brand House', role: 'Intern Brand Designer and Strategist', points: [
+    'Created structured pitch decks and presentation materials for client-facing proposals.',
+    'Developed cohesive brand systems and maintained consistency across visual outputs.',
+    'Collaborated with teams to turn research insights into compelling visual communication.',
+    'Created digital and print designs, including social media graphics, that improved audience engagement.'] },
+  { period: '2022 to 2025', org: 'Treasure Life Family Church', role: 'Brand and Graphic Designer', points: [
+    'Designed brand and graphic materials for church programs, events, and communications.',
+    'Maintained a consistent visual identity across print and digital media.'] },
+  { period: '2022 to 2025', org: 'Impact Orphans Project', role: 'Graphic Designer (Volunteer)', points: [
+    "Volunteered as the organization's graphic designer, creating visuals for its outreach and communication.",
+    "Kept the project's materials clear, consistent, and on brand."] },
+  { period: '2024', org: 'LinkedIn Local Nigeria', role: 'Assistant Brand Designer', points: [
+    'Created event branding for professional networking gatherings.',
+    'Designed social media templates and promotional materials.',
+    'Kept a consistent visual language across all touchpoints.'] },
+  { period: '2024', org: 'TRC Staffing Solutions', role: 'Graphic Artist', points: [
+    'Designed branding assets and marketing visuals aligned with corporate standards.',
+    'Produced engaging graphics to support digital campaigns.'] },
+  { period: '2024', org: "Parazim Int'l Chaplains Organization", role: 'Graphic Artist', points: [
+    'Developed consistent branding materials across multiple projects.',
+    'Designed visual assets supporting organizational communication.'] },
+  { period: 'Past role', org: 'Cresol', role: 'Graphic Designer', points: [
+    'Designed graphics and brand visuals for Cresol.'] },
+  { period: 'Website project', org: 'Elijah Adegun', role: 'Website Designer', points: [
+    'Worked on his personal portfolio website, elijahadegun.com.',
+    'Presented his work and personal brand online for clients and collaborators.'],
+    link: { label: 'elijahadegun.com', url: 'https://elijahadegun.com' } },
+];
+
+export const FAQS = [
+  ['What services do you offer?', 'Web development, mobile apps, brand identity, AI automation, and UI/UX design. If you are not sure which you need, tell me what you are trying to achieve and I will point you in the right direction.'],
+  ['How much does a project typically cost?', 'It depends on the scope, the timeline, and how much custom work is involved. Send me a short description of the project and I will reply with a clear quote.'],
+  ["What's the typical turnaround time?", 'Timelines depend on the size of the project. Once I understand what you need, I will give you a realistic schedule before we start.'],
+  ['Do you offer revisions?', 'Yes. Revisions are part of the process, and we agree on how many are included before the project starts.'],
+  ['How do we get started?', 'Send me a message through the form or email me directly. Tell me about your project, your goals, and your deadline, and I will get back to you.'],
+];
