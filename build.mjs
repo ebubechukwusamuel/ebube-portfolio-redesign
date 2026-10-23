@@ -247,6 +247,7 @@ ${p.decisions && p.decisions.length ? `<section class="pblock reveal"><h2>Key de
 ${p.screens && p.screens.length ? `<section class="pblock reveal"><h2>Product screens</h2><div class="screen-grid">${p.screens.map((s) => `<figure class="screen-card"><img src="/assets/projects/${esc(s.src)}" alt="${esc(s.alt)}" width="360" height="820" loading="lazy" decoding="async"><figcaption>${esc(s.title)}</figcaption></figure>`).join('')}</div></section>` : ''}
 ${p.cover ? `<p class="case-note">This is a concept design. Amounts shown are sample interface content, not live financial data. The Invest tab is shown as unavailable until a licensed investment partner is connected.</p>` : ''}
 ${p.nextSteps ? `<section class="pblock reveal"><h2>What I would validate next</h2><p>${esc(p.nextSteps)}</p></section>` : ''}
+${p.scopeNote ? `<section class="pblock reveal"><h2>What I chose not to ship yet</h2><p>${esc(p.scopeNote)}</p></section>` : ''}
 <section class="pblock reveal"><h2>${design ? 'Focus areas' : 'Tech stack'}</h2><div class="tags big">${p.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>
 <section class="pblock reveal"><h2>Key features</h2><ul class="feats">${p.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></section>
 <nav class="pager reveal" aria-label="More projects">
@@ -254,7 +255,7 @@ ${p.nextSteps ? `<section class="pblock reveal"><h2>What I would validate next</
 <div class="r">${next ? `<a href="/projects/${next.slug}"><small>Next</small><strong>${esc(next.title)} <span aria-hidden="true">&rsaquo;</span></strong></a>` : ''}</div>
 </nav></div></article>
 ${cta('Want something like this?')}`;
-    write(`projects/${p.slug}/index.html`, layout({ title: p.title, desc: p.overview, path: `/projects/${p.slug}`, active: '/projects', body, og: `/assets/projects/${p.slug}.jpg` }));
+    write(`projects/${p.slug}/index.html`, layout({ title: p.title, desc: p.overview, path: `/projects/${p.slug}`, active: '/projects', body, og: `/assets/projects/${p.cover || (p.slug + '.jpg')}` }));
   });
 }
 
