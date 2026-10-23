@@ -1,0 +1,106 @@
+name: Portfolio build check
+
+on:
+  push:
+    branches:
+      - main
+      - paystack-product-designer-refresh
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Check JavaScript syntax
+        run: |
+          node --version
+          node --check build.mjs
+          node --check data.mjs
+
+      - name: Build the static portfolio
+        run: node build.mjs
+
+      - name: Validate the generated portfolio
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+
+          const requiredFiles = [
+            'index.html',
+            'projects/index.html',
+            'projects/smart-pocket/index.html',
+            'assets/projects/smart-pocket-home.png',
+            'assets/projects/smart-pocket-pockets.png',
+            'assets/projects/smart-pocket-invest.png',
+            'assets/projects/smart-pocket-income-setup.png',
+          ];
+
+          for (const file of requiredFiles) {
+            if (!fs.existsSync(file)) throw new Error(`Missing required file: ${file}`);
+          }
+
+          const home = fs.readFileSync('index.html', 'utf8');
+          const projects = fs.readFileSync('projects/index.html', 'utf8');
+          const smartPocket = fs.readFileSync('projects/smart-pocket/index.html', 'utf8');
+
+          if (!home.includes('Smart Pocket')) throw new Error('Smart Pocket is missing from the home page');
+          if (!projects.includes('href="/projects/smart-pocket"')) throw new Error('Smart Pocket is missing from the projects listing');
+          if (projects.includes('FinTech Bank UI Design')) throw new Error('The excluded FinTech Bank UI Design project has reappeared');
+          for (const screen of [
+            'smart-pocket-home.png',
+            'smart-pocket-pockets.png',
+            'smart-pocket-invest.png',
+            'smart-pocket-income-setup.png',
+          ]) {
+            if (!smartPocket.includes(screen)) throw new Error(`Case study does not reference ${screen}`);
+          }
+
+          for (const file of requiredFiles.filter((f) => f.endsWith('.png'))) {
+            const image = fs.readFileSync(file);
+            if (image.length < 1000 || image.readUInt32BE(0) !== 0x89504e47) {
+              throw new Error(`Invalid or empty PNG: ${file}`);
+            }
+          }
+
+          console.log('Portfolio build validation passed.');
+          NODE
+
+  commit-generated-pages:
+    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/paystack-product-designer-refresh')
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: paystack-product-designer-refresh
+          persist-credentials: true
+
+      - name: Regenerate and commit static pages
+        run: |
+          node build.mjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Generated pages are already current."
+          else
+            git commit -m "Build generated portfolio pages"
+            git push
+          fi

@@ -2,12 +2,12 @@
 // Style rule: no em dashes or en dashes anywhere (the build fails if one slips in).
 
 export const SITE = {
-  url: 'https://ebubechukwu-portfolio.vercel.app', // change to https://ebubesamuel.online when the domain is switched,
+  url: 'https://www.ebubesamuel.online',
   name: 'Ebubechukwu Samuel',
   short: 'Ebube.',
-  title: 'Freelance Designer & Developer',
-  tagline: 'AI-powered design & dev. Building in public. Hit me up if you need a site, brand, or AI solution.',
-  description: 'Ebubechukwu Samuel is a freelance designer and developer in Nigeria. Presentation design, brand identity, web and mobile apps, and AI automation. See his work and get in touch.',
+  title: 'AI-Powered Product Designer & Builder',
+  tagline: 'I combine strong visual design with AI-assisted product building to turn ideas into useful digital experiences.',
+  description: 'Ebubechukwu Samuel is an AI-powered product designer and builder in Nigeria, with 5+ years of visual design experience. He creates clear product interfaces, brand systems, and working web experiences using Figma and AI-assisted tools.',
   email: 'ebubechkwu.samuel.com@gmail.com',
   social: [
     { label: 'GitHub', url: 'https://github.com/ebubechukwusamuel' },
@@ -19,43 +19,340 @@ export const SITE = {
 };
 
 export const SERVICES = [
-  { id: 'presentation', size: 'wide', dark: true, title: 'Presentation Design', icon: 'slides', colors: ['#2997ff', '#5e5ce6'],
-    text: 'Pitch, corporate and consulting decks in PowerPoint, Keynote and Google Slides that tell a clear story.' },
-  { id: 'brand', size: 'wide', dark: false, title: 'Brand Identity', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
+  { id: 'uiux', size: 'wide', dark: true, title: 'Product Design & UI/UX', icon: 'layout', colors: ['#2997ff', '#5e5ce6'],
+    text: 'User flows, prototypes, and polished mobile and web interfaces shaped around a clear user problem.' },
+  { id: 'web', size: 'wide', dark: false, title: 'AI-Assisted Product Building', icon: 'code', colors: ['#30d158', '#0a84ff'],
+    text: 'I use AI coding tools to turn product ideas and designs into working web experiences, then refine the details.' },
+  { id: 'brand', size: 'third', dark: false, title: 'Brand Identity', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
     text: 'Logos, color palettes, typography and guidelines that make a business memorable and consistent.' },
   { id: 'graphic', size: 'third', dark: false, title: 'Graphic Design', icon: 'image', colors: ['#ff9f0a', '#ff375f'],
     text: 'Flyers, banners, social media graphics and event materials for print and digital.' },
+  { id: 'mobile', size: 'third', dark: false, title: 'Mobile Apps', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
+    text: 'Mobile-first product experiences for iOS and Android, from onboarding to everyday use.' },
+  { id: 'presentation', size: 'third', dark: true, title: 'Presentation Design', icon: 'slides', colors: ['#2997ff', '#5e5ce6'],
+    text: 'Pitch, corporate and consulting decks in PowerPoint, Keynote and Google Slides that tell a clear story.' },
   { id: 'data', size: 'third', dark: true, title: 'Infographics & Data Visuals', icon: 'chart', colors: ['#30d158', '#0a84ff'],
     text: 'Complex data and ideas turned into clear infographics and visual stories people understand.' },
-  { id: 'uiux', size: 'third', dark: false, title: 'UI/UX & Web Design', icon: 'layout', colors: ['#64d2ff', '#30d158'],
-    text: 'Wireframes, prototypes and polished interface designs for websites, portfolios and stores.' },
-  { id: 'web', size: 'third', dark: true, title: 'Web Development', icon: 'code', colors: ['#2997ff', '#5e5ce6'],
-    text: 'Fast, responsive websites and full-stack web apps built with Next.js and TypeScript.' },
-  { id: 'mobile', size: 'third', dark: false, title: 'Mobile Apps', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
-    text: 'Cross-platform iOS and Android apps with React Native, Expo and Flutter.' },
   { id: 'ai', size: 'third', dark: true, title: 'AI Automation', icon: 'chat', colors: ['#30d158', '#0a84ff'],
     text: 'Workflow automations and chatbots with n8n, AI and browser automation that save time.' },
 ];
-
 export const PROJECTS = [
-  { slug: 'kredo', shot: true, title: 'Kredo', category: 'Development', filters: ['web'],
-    summary: 'All-in-one freelancer OS: proposals, contracts, invoices, time tracking, and client portal in one unified app.',
-    overview: 'Replaces 5+ tools freelancers juggle with one seamless experience. One tool covers proposals, e-signature contracts, invoicing with Paystack and Stripe, time tracking, expense management, and a client portal for collaboration.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Paystack', 'Stripe'],
-    features: ['Unified dashboard replacing 5+ freelance tools', 'Proposal and contract generation with e-signatures', 'Invoice creation with Paystack & Stripe payment processing', 'Time tracking and expense management', 'Client portal for project collaboration and file sharing'],
-    links: [{ label: 'Live Site', url: 'https://kredo-gray.vercel.app' }] },
+  {
+    slug: 'smart-pocket', cover: 'smart-pocket-home.png', shot: true,
+    title: 'Smart Pocket', category: 'Product Design', filters: ['design'],
+    summary: 'A mobile finance concept that helps people give each part of one income a clear purpose through named money pockets.',
+    overview: 'Smart Pocket is a mobile finance concept for people who manage several priorities from one income. Set income and timing, split money into named pockets, then track what is available and spent. Auto-split rules make the plan visible. The Invest tab clearly shows that investing is not open yet and offers learning content while a licensed partner is not connected.',
+    challenge: 'One income has to cover bills, everyday spending, emergencies, and personal goals. Without a clear plan, it can be hard to see what money is already committed and what is still free to use.',
+    approach: 'I mapped the journey from income setup to assigning money to pockets, then made the home screen show total balance, unallocated money, monthly spending, and pocket progress. I kept auto-split visible instead of burying it in settings. For investing, I used a clear unavailable state and learning content rather than presenting unverified returns as live financial information.',
+    nextSteps: 'I would test whether people understand the difference between total balance, unallocated money, and pocket balances; verify that the displayed amounts reconcile across screens; and run usability tests on income setup and auto-split. I would use those findings to refine the wording, accessibility, error states, and trust cues. User testing and live financial integrations have not been completed yet.',
+    scopeNote: 'I deliberately did not present investing as a live feature. The Figma design says a licensed investment partner is not connected yet, so the Invest screen explains the limitation and offers learning content instead of implying that users can buy funds or earn the sample returns shown in earlier concept screens.',
+    caseNote: 'This is a concept design. Amounts shown are sample interface content, not live financial data. The Invest tab is unavailable until a licensed investment partner is connected.',
+    decisions: [
+      'Keep total balance and unallocated money near the top to show what has not been assigned.',
+      'Use named pockets with remaining amounts and progress bars so budget status is easy to scan.',
+      'Make spending, savings, and locked states filterable on the Pockets screen.',
+      'Show auto-split status on the home screen so people can tell when allocation rules are active.',
+      'Keep investing unavailable until a licensed partner is connected, and use the Invest tab for education rather than unverified balances or returns.'
+    ],
+    screens: [
+      { src: 'smart-pocket-home.png', title: 'Home dashboard', alt: 'Smart Pocket home screen showing total balance, unallocated money, spending summary, pocket balances, and auto-split status' },
+      { src: 'smart-pocket-pockets.png', title: 'Pockets overview', alt: 'Smart Pocket pockets screen with All, Spending, Savings, and Locked filters and pocket balances' },
+      { src: 'smart-pocket-income-setup.png', title: 'Income setup', alt: 'Smart Pocket income setup screen with monthly income, income type, and income timing fields' },
+      { src: 'smart-pocket-invest.png', title: 'Invest availability state', alt: 'Smart Pocket Invest screen explaining that investing is not open yet and providing financial learning content' }
+    ],
+    caption: 'Home dashboard screen from the Smart Pocket Figma concept.',
+    tags: ['Product Design', 'Figma', 'Personal Finance', 'Mobile UI', 'Interaction Design'],
+    features: [
+      'Set monthly income, income type, and expected income timing before building a plan.',
+      'Organise one balance into named pockets such as rent, emergency, transport, family, giving, fun, and eating out.',
+      'View remaining pocket amounts and spending progress from the home dashboard.',
+      'Review spending activity and transaction categories in one place.',
+      'Set and display auto-split rules for planned pockets.',
+      'Show a clear unavailable state and financial learning content for investing until a licensed investment partner is connected.'
+    ],
+    links: [{ label: 'View Figma screens', url: 'https://www.figma.com/design/TRAToW0hPwhjmdrgJLd8Lq' }]
+  },
+  {
+    "slug": "nuvora",
+    "cover": "nuvora-patient-home.png",
+    "coverOrientation": "landscape",
+    "shot": true,
+    "title": "Nuvora",
+    "category": "Product Design",
+    "filters": [
+      "design",
+      "ai",
+      "web"
+    ],
+    "summary": "An AI-assisted healthcare platform designed to help people understand health concerns, keep track of care, and reach qualified professionals.",
+    "overview": "Nuvora is an AI and human healthcare product with separate patient, doctor and admin experiences. The current app includes a patient home, AI consultation, doctor booking, appointments, health records and timeline, with a doctor portal for schedules and earnings. The product aims to make healthcare decisions easier to navigate without presenting AI as a replacement for professional care.",
+    "challenge": "When people have a health concern, they may not know what the information means, where to go next, or how to reach the right professional. Nuvora brings guidance, health records and routes to human care into one product journey.",
+    "approach": "I built a connected product experience across patient and doctor tasks. For patients, the home screen prioritises starting a health conversation and quick access to booking, hospital search, lab reading and records. The doctor workspace keeps appointment status and earnings information visible. The interface direction uses a dark clinical palette, restrained green and cyan accents, and clear information grouping.",
+    "nextSteps": "I would validate the language used in AI health guidance with healthcare professionals, test escalation and emergency states, check privacy and consent flows, and test patient onboarding and doctor booking with users. Clinical safety, user outcomes and every live integration need separate verification; the screenshots alone do not establish those results.",
+    "scopeNote": "This case study focuses on navigation and product structure: ask, understand, track, and connect to human care. The AI should support health education and decision-making, not claim to replace professional diagnosis. Doctor earnings are presented as ledger records, not as a stored-value wallet.",
+    "caseNote": "The Figma link opens the original Nuvora UI supplied for this case study, including patient, doctor and admin screens. Names and figures are illustrative. The interface is not evidence of clinical validation or confirmed live integration status.",
+    "decisions": [
+      "Keep the patient home focused on the next action instead of showing every health feature at once.",
+      "Provide direct paths to AI consultation, doctor booking, hospital search, lab reading and health records.",
+      "Separate the patient portal from the doctor workspace because their tasks and permissions differ.",
+      "Show doctor earnings as a ledger with payout status, not as a wallet that holds user funds.",
+      "Use explicit human-care escalation and safety wording rather than suggesting AI replaces clinicians."
+    ],
+    "screens": [
+      {
+        "src": "nuvora-patient-home.png",
+        "title": "Patient home",
+        "alt": "Original Nuvora patient home design with health guidance, appointments and quick actions"
+      },
+      {
+        "src": "nuvora-doctor-portal.png",
+        "orientation": "landscape",
+        "title": "Doctor portal",
+        "alt": "Original Nuvora doctor dashboard design with appointments, earnings and verification state"
+      }
+    ],
+    "caption": "Patient home from the original Nuvora Figma design.",
+    "tags": [
+      "Product Design",
+      "Healthcare",
+      "AI-assisted product",
+      "Patient experience",
+      "Doctor portal",
+      "Next.js"
+    ],
+    "features": [
+      "Patient home with quick access to health conversation and care tasks.",
+      "AI consultation and plain-language health guidance experience.",
+      "Doctor discovery, booking and appointment management routes.",
+      "Health timeline, prescriptions, lab reader and personal records.",
+      "Separate doctor workspace for schedules, appointments and earnings history.",
+      "Admin and operational routes for platform management."
+    ],
+    "links": [
+      {
+        "label": "Open Nuvora app",
+        "url": "https://nuvora-kappa.vercel.app"
+      },
+      {
+        "label": "View original Nuvora Figma UI",
+        "url": "https://www.figma.com/design/Wjq3ZsyyjKVztCTJzULySI"
+      },
+      {
+        "label": "View project source",
+        "url": "https://github.com/ebubechukwusamuel/my-assistant/tree/master/projects/nuvora"
+      }
+    ]
+  },
+  {
+    "slug": "fundi",
+    "cover": "fundi-dashboard.png",
+    "coverOrientation": "landscape",
+    "shot": true,
+    "title": "Fundi",
+    "category": "Product Design",
+    "filters": [
+      "design",
+      "ai",
+      "web"
+    ],
+    "summary": "A personal finance assistant for viewing transactions, planning budgets, tracking savings goals and making sense of spending.",
+    "overview": "Fundi is a personal finance product with web and mobile interfaces. It brings balances, transaction activity, budgets, goals and AI-generated insights into one view, with account connection flows planned around open-banking providers. The interface uses a dark finance dashboard with emerald accents so money movement, progress and alerts are easy to scan.",
+    "challenge": "Money information is often scattered across account screens, notes and mental calculations. People need to see what came in, what went out, which budgets are getting close to their limits and what they can adjust next.",
+    "approach": "I organised the core experience around a finance snapshot, recent activity, budget progress and insights. Transactions can be reviewed separately, while the AI insights area gives context to potential budget alerts, spending patterns and saving habits. Web and mobile screens follow the same dark palette and green highlight system.",
+    "nextSteps": "I would test whether people understand transaction categories, budget progress and insight wording without over-trusting automated suggestions. I would also test account-link failure, duplicate transactions, stale balances, low-data states, privacy consent and how a user can correct an insight that does not match their situation. Metrics and user outcomes should only be added after real testing.",
+    "scopeNote": "The AI features are framed as decision support, not financial advice. Account connection and transaction refresh states need testing against real provider responses, and all demo values must remain clearly labelled as sample content.",
+    "caseNote": "The Figma link opens the original Fundi designs, including mobile screens and web dashboard states. Transaction rows and finance figures shown here are illustrative sample data, not real user balances or performance results.",
+    "decisions": [
+      "Put balance, income, expenses and savings rate together for a quick financial snapshot.",
+      "Keep recent transactions close to the summary so users can verify what changed.",
+      "Show budget progress using both amounts and a simple visual indicator.",
+      "Separate AI insights into alerts, spending patterns and practical saving prompts.",
+      "Treat bank linking and data refresh as trust-critical flows, with clear success, failure and stale-data states."
+    ],
+    "screens": [
+      {
+        "src": "fundi-dashboard.png",
+        "title": "Finance dashboard",
+        "alt": "Original Fundi web dashboard design with account overview, transactions, budgets and AI insights"
+      },
+      {
+        "src": "fundi-ai-insights.png",
+        "orientation": "landscape",
+        "title": "AI insights",
+        "alt": "Original Fundi AI insights screen showing finance guidance and spending patterns"
+      }
+    ],
+    "caption": "Web dashboard from the original Fundi Figma design.",
+    "tags": [
+      "Product Design",
+      "Personal Finance",
+      "Mobile and web",
+      "AI insights",
+      "Dashboard UI",
+      "Open banking"
+    ],
+    "features": [
+      "Dashboard summary for balances, income, expenses and savings rate.",
+      "Transaction list with income and expense categories.",
+      "Budget setup and progress tracking by category.",
+      "Savings goals and progress review.",
+      "AI-generated budget alerts, spending observations and saving tips.",
+      "Bank connection and transaction-sync flows designed around external providers."
+    ],
+    "links": [
+      {
+        "label": "View original Fundi Figma UI",
+        "url": "https://www.figma.com/design/KTyguYsirmN8T0GP4fIaSt"
+      },
+      {
+        "label": "View project source",
+        "url": "https://github.com/ebubechukwusamuel/my-assistant/tree/master/projects/fundi"
+      }
+    ]
+  },
+  {
+    "slug": "kredo",
+    "cover": "kredo-dashboard.png",
+    "coverOrientation": "landscape",
+    "shot": true,
+    "title": "Kredo",
+    "category": "Product Design",
+    "filters": [
+      "web",
+      "design"
+    ],
+    "summary": "A freelancer workspace that connects client management, proposals, projects, time tracking, expenses and invoicing.",
+    "overview": "Kredo brings core freelance operations into one workspace. The current app includes client and request flows, proposal management, project tracking, billable time, expenses and invoice status. Instead of jumping between separate tools, a freelancer can follow work from a new client request through delivery and payment follow-up.",
+    "challenge": "Freelancers often handle client details, proposals, project work, time, expenses and payment reminders in separate places. That makes it harder to see what needs action and what has already been billed or paid.",
+    "approach": "I structured the workspace around recurring freelance tasks and put key areas in one navigation system. The dashboard brings clients, projects, proposals and billing into view, with time tracking and invoice actions nearby. The invoice table makes status and due dates visible so pending, partial and overdue invoices can be followed up.",
+    "nextSteps": "I would test the flow with working freelancers from a new client request through proposal acceptance, project work, invoicing and payment confirmation. Important edge cases include partial payments, late invoices, timer interruptions, expense corrections, duplicate submissions and payment-webhook delays. Real payment success rates or time saved should not be claimed without evidence.",
+    "scopeNote": "The case study focuses on the workflow and product UI. Payment provider paths and invoice states should be validated in a test environment before claiming a production-verified payment experience.",
+    "caseNote": "This separate Figma file contains editable Kredo screens built from the actual repository routes and UI patterns. Client names, amounts, counts and invoice rows are sample interface data, not real revenue or client results.",
+    "decisions": [
+      "Keep clients, proposals, projects, time, expenses and invoices in one workspace navigation.",
+      "Show client and project counts alongside billing status to connect delivery with money owed.",
+      "Make time tracking visible on the dashboard so billable work is easier to record.",
+      "Use explicit invoice states such as sent, paid, partial and overdue to support clear follow-up.",
+      "Treat payment confirmation, duplicate submissions and partial payment as states that need verification, not just polished success screens."
+    ],
+    "screens": [
+      {
+        "src": "kredo-dashboard.png",
+        "title": "Freelancer dashboard",
+        "alt": "Editable reference for Kredo's dashboard with clients, projects, proposals, timer and invoice summary"
+      },
+      {
+        "src": "kredo-invoices.png",
+        "orientation": "landscape",
+        "title": "Invoice details",
+        "alt": "Editable Kredo invoice detail screen with client information, line items, amount paid, balance due and payment action"
+      }
+    ],
+    "caption": "Kredo freelancer workspace, with screens mapped to the current app routes.",
+    "tags": [
+      "Product Design",
+      "Freelancer tools",
+      "Next.js",
+      "TypeScript",
+      "Time tracking",
+      "Invoicing"
+    ],
+    "features": [
+      "Client profiles and client request intake.",
+      "Proposal creation and proposal status tracking.",
+      "Project management and project detail workflows.",
+      "Billable time logging and timer controls.",
+      "Expense recording and project cost visibility.",
+      "Invoice creation with paid, sent, partial and overdue states.",
+      "Payment-related flows designed around Paystack and Stripe, pending end-to-end verification."
+    ],
+    "links": [
+      {
+        "label": "Open Kredo",
+        "url": "https://kredo-gray.vercel.app"
+      },
+      {
+        "label": "View complete Kredo Figma UI",
+        "url": "https://www.figma.com/design/eox5O3WS4hPhu0i3oBo6ON"
+      },
+      {
+        "label": "View source code",
+        "url": "https://github.com/ebubechukwusamuel/kredo"
+      }
+    ]
+  },
+  {
+    "slug": "flowtrack",
+    "cover": "flowtrack-board.png",
+    "coverOrientation": "landscape",
+    "shot": true,
+    "title": "FlowTrack",
+    "category": "Product Design",
+    "filters": [
+      "web",
+      "design"
+    ],
+    "summary": "A team project workspace for task boards, delivery planning, collaboration and activity tracking.",
+    "overview": "FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.",
+    "challenge": "When team tasks, deadlines, comments and ownership live in separate tools, it is difficult to see what is moving, what is blocked and who needs follow-up. FlowTrack brings project status and collaboration into a shared workspace.",
+    "approach": "I focused the board on clear task states and team context. Project metrics make the workload scannable, while task cards keep the title, priority, assignee and due-date information together. The My tasks view then helps each person focus on their own assignments and status. Chat, activity, team and submissions flows support collaboration around the work.",
+    "nextSteps": "I would validate the board with teams using realistic task volumes and test dragging tasks between states, task ownership changes, invitations, empty boards, overdue states, mobile layout and permissions. Chat and voice/video call flows also need reliability and accessibility testing before claiming team outcomes.",
+    "scopeNote": "The portfolio shows the product's interface and intended workflows. Team names, task counts, event labels and status examples are illustrative and should not be treated as live activity or evidence of productivity improvement.",
+    "caseNote": "This separate Figma file contains editable FlowTrack screens mapped from the actual repository routes and current dark/lime UI. Task names, counts, dates and activity are sample data. The calendar route in the current code redirects to the dashboard, so the screen set focuses on implemented project and collaboration routes.",
+    "decisions": [
+      "Use visible task columns to make status and work-in-progress easier to scan.",
+      "Keep assignee, category and due date on the task card so basic decisions do not require opening every task.",
+      "Pair the Kanban board with a calendar for deadline-based planning.",
+      "Keep activity and collaboration routes in the same workspace as project tasks.",
+      "Design empty, loading, permission and task-move failure states before relying on the board in team workflows."
+    ],
+    "screens": [
+      {
+        "src": "flowtrack-board.png",
+        "title": "Project board",
+        "alt": "Editable reference for FlowTrack's Kanban-style board with task status, assignment and due dates"
+      },
+      {
+        "src": "flowtrack-calendar.png",
+        "orientation": "landscape",
+        "title": "My tasks",
+        "alt": "FlowTrack My tasks screen showing assigned tasks, due dates, priorities and current status"
+      }
+    ],
+    "caption": "FlowTrack project board built from the actual project route and task UI patterns.",
+    "tags": [
+      "Product Design",
+      "Project management",
+      "Kanban",
+      "Team collaboration",
+      "Task management",
+      "Next.js"
+    ],
+    "features": [
+      "Project board with task status, assignees and due dates.",
+      "My tasks and team workload views.",
+      "Due-date and priority tracking across assigned tasks and project boards.",
+      "Organization and member management flows.",
+      "Activity feed and submission review workflows.",
+      "Chat and voice/video collaboration routes in the product code."
+    ],
+    "links": [
+      {
+        "label": "View complete FlowTrack Figma UI",
+        "url": "https://www.figma.com/design/fSxOtiUY2Y931rZ7wOaDWf"
+      },
+      {
+        "label": "View source code",
+        "url": "https://github.com/ebubechukwusamuel/flowtrack"
+      }
+    ]
+  },
   { slug: 'spyglass', shot: true, title: 'Spyglass', category: 'Development', filters: ['ai'],
     summary: 'Natural language Q&A for any codebase. Index once, ask questions with source citations.',
     overview: 'CLI tool published on npm that indexes any codebase locally using vector embeddings. It walks project files, chunks at function boundaries, embeds via Ollama (local) or OpenAI (cloud), and stores vectors in SQLite.',
     tags: ['Node.js', 'TypeScript', 'RAG', 'SQLite', 'OpenAI', 'Ollama', 'CLI'],
     features: ['Indexes codebases at function boundaries for precise answers', 'Supports both local (Ollama) and cloud (OpenAI) embeddings', 'Answers include source file and line number citations', 'Published as @mazion/spyglass on npm', 'Built with Node.js + Commander for a polished CLI experience'],
     links: [{ label: 'Source Code', url: 'https://github.com/ebubechukwusamuel/spyglass' }] },
-  { slug: 'flowtrack', shot: true, title: 'FlowTrack', category: 'Development', filters: ['web'],
-    summary: 'Project management with Kanban boards, team chat, voice and video calls, and analytics. Simple for freelancers, powerful for teams.',
-    overview: 'A full-featured project management platform covering Kanban boards, task tracking, team management, activity feeds, chat, video calls, analytics, and calendar views.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'WebRTC', 'Framer Motion'],
-    features: ['Customizable drag-and-drop Kanban boards', 'Team chat with voice and video calls', 'Project analytics dashboard', 'Calendar and submission review workflows', 'Role-based access control'],
-    links: [{ label: 'Live Site', url: 'https://flowstarck.vercel.app' }] },
   { slug: 'twitter-automation', shot: true, title: 'Twitter/X Automation', category: 'Development', filters: ['ai'],
     summary: 'Browser-based Twitter/X automation using Playwright. Posts tweets, manages content strategy, and publishes from markdown files without API keys.',
     overview: 'Automated Twitter posting for @ebubechukwu_sam using browser-based automation via Playwright (no API keys needed). It logs into x.com in an existing Chrome session, reads posts from markdown files, and publishes them.',
@@ -131,9 +428,9 @@ export const TESTIMONIALS = [
 
 export const ABOUT = {
   bio: [
-    "Hi there! I'm Ebube, a freelance designer and developer based in Nigeria. I help businesses, brands, and founders bring their ideas to life, from brand identity and web design to full-stack web apps and mobile applications.",
-    "My work sits at the intersection of design and technology. I believe great products are built at the boundary of bold visual thinking and solid engineering, and that's where I operate. Whether it's crafting a brand identity, building a web platform, or automating workflows with AI, I'm here to deliver results.",
-    "Let's work together to build something great. Get in touch, and let's make it happen!",
+    "I'm Ebube, a designer and AI-powered product builder based in Nigeria. I started in graphic and brand design, and now bring that eye for visual detail into digital products. I use Figma and AI coding tools to move from an idea to a working experience.",
+    "I work across brand identity, product UI, and web experiences. I care about making the main action clear, keeping screens visually consistent, and turning designs into something people can use. I'm interested in teams where design decisions and implementation stay close.",
+    "I bring more than five years of visual design experience and a practical interest in AI-assisted product building. I want to make digital products that look considered and work well for the people using them.",
   ],
   skills: [
     ['Presentation Design', 'PowerPoint, Keynote, and Google Slides decks built to corporate and consulting standards.'],
@@ -142,8 +439,8 @@ export const ABOUT = {
     ['Brand Consistency', 'Design systems that keep every touchpoint on brand.'],
     ['Visual Storytelling', 'Corporate decks and campaigns that carry a clear narrative.'],
     ['Collaboration', 'Clear communication with stakeholders, teams, and clients.'],
-    ['UI/UX and Web Design', 'Wireframes, prototypes, and polished interfaces for websites and apps.'],
-    ['Web and Mobile Development', 'Next.js, TypeScript, React Native, and Flutter builds from idea to launch.'],
+    ['Product Design and UI/UX', 'Figma flows, prototypes, and polished interfaces for mobile and web products.'],
+    ['AI-Assisted Product Building', 'Using AI coding tools and web technologies to turn product ideas into working experiences.'],
     ['AI Automation', 'n8n workflows, chatbots, and browser automation that save hours.'],
   ],
   education: [

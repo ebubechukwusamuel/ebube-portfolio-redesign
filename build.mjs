@@ -116,7 +116,7 @@ ${footer()}
 }
 
 const pcard = (p, i = 0) => `<a class="pcard reveal" style="--d:${(i % 2) * 0.08}s" href="/projects/${p.slug}" data-filters="${p.filters.join(' ')}">
-<div class="pimg"><img src="/assets/projects/${p.slug}.jpg" alt="${esc(p.title)} ${p.shot ? 'project cover' : 'cover illustration'}" width="1600" height="900" loading="lazy" decoding="async"></div>
+<div class="pimg${p.cover && p.coverOrientation !== 'landscape' ? ' pimg-mobile' : ''}"><img src="/assets/projects/${p.cover || (p.slug + '.jpg')}" alt="${esc(p.title)} ${p.cover ? 'product screen' : p.shot ? 'project cover' : 'cover illustration'}" width="${p.coverOrientation === 'landscape' ? 1440 : p.cover ? 360 : 1600}" height="${p.coverOrientation === 'landscape' ? 860 : p.cover ? 820 : 900}" loading="lazy" decoding="async"></div>
 <div class="pbody"><span class="eyebrow">${esc(p.category)}</span><h3>${esc(p.title)}</h3><p>${esc(p.summary)}</p>
 <div class="tags">${p.tags.slice(0, 2).map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div></div></a>`;
 
@@ -233,13 +233,21 @@ ${cta()}`;
 function projectPages() {
   PROJECTS.forEach((p, i) => {
     const prev = PROJECTS[i - 1], next = PROJECTS[i + 1];
-    const design = p.category === 'Design';
+    const design = p.category === 'Design' || p.category === 'Product Design';
     const btns = p.links.map((l, k) => `<a class="btn ${k === 0 ? 'btn-primary' : 'btn-ghost'} btn-lg" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a>`).join('');
     const body = `
 <article class="section dark pt-md"><div class="container narrow">
 <a class="textlink back" href="/projects"><span aria-hidden="true">&lsaquo;</span> Back to projects</a>
 <header class="phead reveal"><p class="eyebrow">${esc(p.category)}</p><h1 class="display ptitle">${esc(p.title)}</h1><p class="lead left big">${esc(p.overview)}</p>${btns ? `<div class="pbtns">${btns}</div>` : ''}</header>
-<figure class="hero-img reveal"><img src="/assets/projects/${p.slug}.jpg" alt="${esc(p.title)} ${p.shot ? 'project cover' : 'cover illustration'}" width="1600" height="900" decoding="async"><figcaption>${p.shot ? '' : 'Cover illustration.'}${design && p.links.length ? ' See the full project on Behance.' : ''}</figcaption></figure>
+<figure class="hero-img reveal"><img src="/assets/projects/${p.cover || (p.slug + '.jpg')}" alt="${esc(p.title)} ${p.cover ? 'product screen' : p.shot ? 'project cover' : 'cover illustration'}" width="${p.coverOrientation === 'landscape' ? 1440 : p.cover ? 360 : 1600}" height="${p.coverOrientation === 'landscape' ? 860 : p.cover ? 820 : 900}" decoding="async"><figcaption>${p.caption ? esc(p.caption) : p.shot ? '' : 'Cover illustration.'}${design && p.links.some((l) => l.url.includes('behance.net')) ? ' See the full project on Behance.' : ''}</figcaption></figure>
+
+${p.challenge ? `<section class="pblock reveal"><h2>Problem space</h2><p>${esc(p.challenge)}</p></section>` : ''}
+${p.approach ? `<section class="pblock reveal"><h2>Design approach</h2><p>${esc(p.approach)}</p></section>` : ''}
+${p.decisions && p.decisions.length ? `<section class="pblock reveal"><h2>Key design decisions</h2><ul class="feats">${p.decisions.map((d) => `<li>${esc(d)}</li>`).join('')}</ul></section>` : ''}
+${p.screens && p.screens.length ? `<section class="pblock reveal"><h2>Product screens</h2><div class="screen-grid">${p.screens.map((s) => `<figure class="screen-card${s.orientation === 'landscape' ? ' screen-card-landscape' : ''}"><img src="/assets/projects/${esc(s.src)}" alt="${esc(s.alt)}" width="${s.orientation === 'landscape' ? 1440 : 360}" height="${s.orientation === 'landscape' ? 860 : 820}" loading="lazy" decoding="async"><figcaption>${esc(s.title)}</figcaption></figure>`).join('')}</div></section>` : ''}
+${p.caseNote ? `<p class="case-note">${esc(p.caseNote)}</p>` : ''}
+${p.nextSteps ? `<section class="pblock reveal"><h2>What I would validate next</h2><p>${esc(p.nextSteps)}</p></section>` : ''}
+${p.scopeNote ? `<section class="pblock reveal"><h2>What I chose not to ship yet</h2><p>${esc(p.scopeNote)}</p></section>` : ''}
 <section class="pblock reveal"><h2>${design ? 'Focus areas' : 'Tech stack'}</h2><div class="tags big">${p.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>
 <section class="pblock reveal"><h2>Key features</h2><ul class="feats">${p.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></section>
 <nav class="pager reveal" aria-label="More projects">
@@ -247,7 +255,7 @@ function projectPages() {
 <div class="r">${next ? `<a href="/projects/${next.slug}"><small>Next</small><strong>${esc(next.title)} <span aria-hidden="true">&rsaquo;</span></strong></a>` : ''}</div>
 </nav></div></article>
 ${cta('Want something like this?')}`;
-    write(`projects/${p.slug}/index.html`, layout({ title: p.title, desc: p.overview, path: `/projects/${p.slug}`, active: '/projects', body, og: `/assets/projects/${p.slug}.jpg` }));
+    write(`projects/${p.slug}/index.html`, layout({ title: p.title, desc: p.overview, path: `/projects/${p.slug}`, active: '/projects', body, og: `/assets/projects/${p.cover || (p.slug + '.jpg')}` }));
   });
 }
 

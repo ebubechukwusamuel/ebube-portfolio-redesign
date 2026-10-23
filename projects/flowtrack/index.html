@@ -4,28 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FlowTrack | Ebubechukwu Samuel</title>
-<meta name="description" content="A full-featured project management platform covering Kanban boards, task tracking, team management, activity feeds, chat, video calls, analytics, and calendar views.">
+<meta name="description" content="FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.">
 <meta name="theme-color" content="#000000">
-<link rel="canonical" href="https://ebubechukwu-portfolio.vercel.app/projects/flowtrack">
+<link rel="canonical" href="https://www.ebubesamuel.online/projects/flowtrack">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ebubechukwu Samuel">
 <meta property="og:title" content="FlowTrack | Ebubechukwu Samuel">
-<meta property="og:description" content="A full-featured project management platform covering Kanban boards, task tracking, team management, activity feeds, chat, video calls, analytics, and calendar views.">
-<meta property="og:url" content="https://ebubechukwu-portfolio.vercel.app/projects/flowtrack">
-<meta property="og:image" content="https://ebubechukwu-portfolio.vercel.app/assets/projects/flowtrack.jpg">
+<meta property="og:description" content="FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.">
+<meta property="og:url" content="https://www.ebubesamuel.online/projects/flowtrack">
+<meta property="og:image" content="https://www.ebubesamuel.online/assets/projects/flowtrack-board.png">
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="900">
 <meta property="og:image:alt" content="FlowTrack | Ebubechukwu Samuel">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FlowTrack | Ebubechukwu Samuel">
-<meta name="twitter:description" content="A full-featured project management platform covering Kanban boards, task tracking, team management, activity feeds, chat, video calls, analytics, and calendar views.">
-<meta name="twitter:image" content="https://ebubechukwu-portfolio.vercel.app/assets/projects/flowtrack.jpg">
+<meta name="twitter:description" content="FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.">
+<meta name="twitter:image" content="https://www.ebubesamuel.online/assets/projects/flowtrack-board.png">
 <meta name="twitter:image:alt" content="FlowTrack | Ebubechukwu Samuel">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="/assets/css/style.css?v=5ab5af1b">
+<link rel="stylesheet" href="/assets/css/style.css?v=1024496b">
 <script>document.documentElement.className='js';</script>
 
 </head>
@@ -41,13 +41,21 @@
 
 <article class="section dark pt-md"><div class="container narrow">
 <a class="textlink back" href="/projects"><span aria-hidden="true">&lsaquo;</span> Back to projects</a>
-<header class="phead reveal"><p class="eyebrow">Development</p><h1 class="display ptitle">FlowTrack</h1><p class="lead left big">A full-featured project management platform covering Kanban boards, task tracking, team management, activity feeds, chat, video calls, analytics, and calendar views.</p><div class="pbtns"><a class="btn btn-primary btn-lg" href="https://flowstarck.vercel.app" target="_blank" rel="noopener noreferrer">Live Site</a></div></header>
-<figure class="hero-img reveal"><img src="/assets/projects/flowtrack.jpg" alt="FlowTrack project cover" width="1600" height="900" decoding="async"><figcaption></figcaption></figure>
-<section class="pblock reveal"><h2>Tech stack</h2><div class="tags big"><span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">PostgreSQL</span><span class="tag">WebRTC</span><span class="tag">Framer Motion</span></div></section>
-<section class="pblock reveal"><h2>Key features</h2><ul class="feats"><li>Customizable drag-and-drop Kanban boards</li><li>Team chat with voice and video calls</li><li>Project analytics dashboard</li><li>Calendar and submission review workflows</li><li>Role-based access control</li></ul></section>
+<header class="phead reveal"><p class="eyebrow">Product Design</p><h1 class="display ptitle">FlowTrack</h1><p class="lead left big">FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.</p><div class="pbtns"><a class="btn btn-primary btn-lg" href="https://www.figma.com/design/fSxOtiUY2Y931rZ7wOaDWf" target="_blank" rel="noopener noreferrer">View complete FlowTrack Figma UI</a><a class="btn btn-ghost btn-lg" href="https://github.com/ebubechukwusamuel/flowtrack" target="_blank" rel="noopener noreferrer">View source code</a></div></header>
+<figure class="hero-img reveal"><img src="/assets/projects/flowtrack-board.png" alt="FlowTrack product screen" width="1440" height="860" decoding="async"><figcaption>FlowTrack project board built from the actual project route and task UI patterns.</figcaption></figure>
+
+<section class="pblock reveal"><h2>Problem space</h2><p>When team tasks, deadlines, comments and ownership live in separate tools, it is difficult to see what is moving, what is blocked and who needs follow-up. FlowTrack brings project status and collaboration into a shared workspace.</p></section>
+<section class="pblock reveal"><h2>Design approach</h2><p>I focused the board on clear task states and team context. Project metrics make the workload scannable, while task cards keep the title, priority, assignee and due-date information together. The My tasks view then helps each person focus on their own assignments and status. Chat, activity, team and submissions flows support collaboration around the work.</p></section>
+<section class="pblock reveal"><h2>Key design decisions</h2><ul class="feats"><li>Use visible task columns to make status and work-in-progress easier to scan.</li><li>Keep assignee, category and due date on the task card so basic decisions do not require opening every task.</li><li>Pair the Kanban board with a calendar for deadline-based planning.</li><li>Keep activity and collaboration routes in the same workspace as project tasks.</li><li>Design empty, loading, permission and task-move failure states before relying on the board in team workflows.</li></ul></section>
+<section class="pblock reveal"><h2>Product screens</h2><div class="screen-grid"><figure class="screen-card"><img src="/assets/projects/flowtrack-board.png" alt="Editable reference for FlowTrack's Kanban-style board with task status, assignment and due dates" width="360" height="820" loading="lazy" decoding="async"><figcaption>Project board</figcaption></figure><figure class="screen-card screen-card-landscape"><img src="/assets/projects/flowtrack-calendar.png" alt="FlowTrack My tasks screen showing assigned tasks, due dates, priorities and current status" width="1440" height="860" loading="lazy" decoding="async"><figcaption>My tasks</figcaption></figure></div></section>
+<p class="case-note">This separate Figma file contains editable FlowTrack screens mapped from the actual repository routes and current dark/lime UI. Task names, counts, dates and activity are sample data. The calendar route in the current code redirects to the dashboard, so the screen set focuses on implemented project and collaboration routes.</p>
+<section class="pblock reveal"><h2>What I would validate next</h2><p>I would validate the board with teams using realistic task volumes and test dragging tasks between states, task ownership changes, invitations, empty boards, overdue states, mobile layout and permissions. Chat and voice/video call flows also need reliability and accessibility testing before claiming team outcomes.</p></section>
+<section class="pblock reveal"><h2>What I chose not to ship yet</h2><p>The portfolio shows the product's interface and intended workflows. Team names, task counts, event labels and status examples are illustrative and should not be treated as live activity or evidence of productivity improvement.</p></section>
+<section class="pblock reveal"><h2>Focus areas</h2><div class="tags big"><span class="tag">Product Design</span><span class="tag">Project management</span><span class="tag">Kanban</span><span class="tag">Team collaboration</span><span class="tag">Task management</span><span class="tag">Next.js</span></div></section>
+<section class="pblock reveal"><h2>Key features</h2><ul class="feats"><li>Project board with task status, assignees and due dates.</li><li>My tasks and team workload views.</li><li>Due-date and priority tracking across assigned tasks and project boards.</li><li>Organization and member management flows.</li><li>Activity feed and submission review workflows.</li><li>Chat and voice/video collaboration routes in the product code.</li></ul></section>
 <nav class="pager reveal" aria-label="More projects">
-<div><a href="/projects/spyglass"><small>Previous</small><strong><span aria-hidden="true">&lsaquo;</span> Spyglass</strong></a></div>
-<div class="r"><a href="/projects/twitter-automation"><small>Next</small><strong>Twitter/X Automation <span aria-hidden="true">&rsaquo;</span></strong></a></div>
+<div><a href="/projects/kredo"><small>Previous</small><strong><span aria-hidden="true">&lsaquo;</span> Kredo</strong></a></div>
+<div class="r"><a href="/projects/spyglass"><small>Next</small><strong>Spyglass <span aria-hidden="true">&rsaquo;</span></strong></a></div>
 </nav></div></article>
 <section class="cta"><div class="container center reveal">
 <h2 class="display">Want something like this?</h2>
