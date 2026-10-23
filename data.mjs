@@ -5,9 +5,9 @@ export const SITE = {
   url: 'https://ebubechukwu-portfolio.vercel.app', // change to https://ebubesamuel.online when the domain is switched,
   name: 'Ebubechukwu Samuel',
   short: 'Ebube.',
-  title: 'Freelance Designer & Developer',
-  tagline: 'AI-powered design & dev. Building in public. Hit me up if you need a site, brand, or AI solution.',
-  description: 'Ebubechukwu Samuel is a freelance designer and developer in Nigeria. Presentation design, brand identity, web and mobile apps, and AI automation. See his work and get in touch.',
+  title: 'AI-Powered Product Designer & Builder',
+  tagline: 'I combine strong visual design with AI-assisted product building to turn ideas into useful digital experiences.',
+  description: 'Ebubechukwu Samuel combines visual design and AI-assisted product building to create thoughtful digital experiences, from product interfaces to working web apps.',
   email: 'ebubechkwu.samuel.com@gmail.com',
   social: [
     { label: 'GitHub', url: 'https://github.com/ebubechukwusamuel' },
@@ -38,6 +38,39 @@ export const SERVICES = [
 ];
 
 export const PROJECTS = [
+  {
+    slug: 'smart-pocket', cover: 'smart-pocket-home.png', shot: true,
+    title: 'Smart Pocket', category: 'Product Design', filters: ['design'],
+    summary: 'A personal finance concept that helps people organise one main account into clear spending, saving, and investment pockets.',
+    overview: 'Smart Pocket explores a simpler way to manage money: keep one main account, then assign income to named pockets for everyday spending, priorities, savings, and investing. The mobile experience brings balances, budgets, progress, and automatic allocation into one place.',
+    challenge: 'People often manage several goals from the same income. Smart Pocket explores a way to plan that money using one main account and clear pockets for different needs.',
+    approach: 'I designed the key journey from setting monthly income to splitting it into pockets, checking spend and remaining balances, and viewing investments. The screens bring the overall balance and unallocated money forward, then make progress in each pocket easy to scan.',
+    nextSteps: 'Next, I would test the pocket model and auto-split setup with people who manage monthly income. I would also validate the language for balances versus budgets, then refine error states, accessibility, and trust cues based on what people find confusing.',
+    decisions: [
+      'Show total balance and unallocated money near the top, so the starting point is clear.',
+      'Use named pockets with remaining amounts and progress bars to make budget status quick to scan.',
+      'Keep spending, savings, and locked pockets filterable in the Pockets screen.',
+      'Give investing its own space with a portfolio summary and fund details.',
+      'Make automatic allocation visible rather than hiding it inside settings.'
+    ],
+    screens: [
+      { src: 'smart-pocket-home.png', title: 'Home dashboard', alt: 'Smart Pocket home screen with total balance, unallocated money, spending summary, pockets, and auto-split status' },
+      { src: 'smart-pocket-pockets.png', title: 'Pockets overview', alt: 'Smart Pocket pockets screen with spending, savings, and locked filters and category balances' },
+      { src: 'smart-pocket-invest.png', title: 'Investments', alt: 'Smart Pocket investments screen with portfolio value and fund choices' },
+      { src: 'smart-pocket-income-setup.png', title: 'Income setup', alt: 'Smart Pocket income setup screen with monthly income and income timing fields' }
+    ],
+    caption: 'Home dashboard screen from the Smart Pocket Figma concept.',
+    tags: ['Product Design', 'Figma', 'Personal Finance', 'Mobile UI', 'Interaction Design'],
+    features: [
+      'Set monthly income and income timing before assigning money.',
+      'Organise money into pockets such as rent, emergency, transport, family, giving, fun, and eating out.',
+      'See pocket amounts and spending progress from the home dashboard.',
+      'Review spending categories and transactions in one place.',
+      'Explore an Investments area with a portfolio summary and fund information.',
+      'See when auto-split is enabled and how income is allocated across planned pockets.'
+    ],
+    links: [{ label: 'View Figma screens', url: 'https://www.figma.com/design/TRAToW0hPwhjmdrgJLd8Lq' }]
+  },
   { slug: 'kredo', shot: true, title: 'Kredo', category: 'Development', filters: ['web'],
     summary: 'All-in-one freelancer OS: proposals, contracts, invoices, time tracking, and client portal in one unified app.',
     overview: 'Replaces 5+ tools freelancers juggle with one seamless experience. One tool covers proposals, e-signature contracts, invoicing with Paystack and Stripe, time tracking, expense management, and a client portal for collaboration.',
@@ -131,9 +164,9 @@ export const TESTIMONIALS = [
 
 export const ABOUT = {
   bio: [
-    "Hi there! I'm Ebube, a freelance designer and developer based in Nigeria. I help businesses, brands, and founders bring their ideas to life, from brand identity and web design to full-stack web apps and mobile applications.",
-    "My work sits at the intersection of design and technology. I believe great products are built at the boundary of bold visual thinking and solid engineering, and that's where I operate. Whether it's crafting a brand identity, building a web platform, or automating workflows with AI, I'm here to deliver results.",
-    "Let's work together to build something great. Get in touch, and let's make it happen!",
+    "I'm Ebube, a designer and AI-powered product builder based in Nigeria. I started in graphic and brand design, and now bring that eye for visual detail into digital products. I use Figma and AI coding tools to move from an idea to a working experience.",
+    "I work across brand identity, product UI, and web experiences. I care about making the main action clear, keeping screens visually consistent, and turning designs into something people can use. I'm interested in teams where design decisions and implementation stay close.",
+    "I bring more than five years of visual design experience and a practical interest in AI-assisted product building. I want to make digital products that look considered and work well for the people using them.",
   ],
   skills: [
     ['Presentation Design', 'PowerPoint, Keynote, and Google Slides decks built to corporate and consulting standards.'],
@@ -142,8 +175,8 @@ export const ABOUT = {
     ['Brand Consistency', 'Design systems that keep every touchpoint on brand.'],
     ['Visual Storytelling', 'Corporate decks and campaigns that carry a clear narrative.'],
     ['Collaboration', 'Clear communication with stakeholders, teams, and clients.'],
-    ['UI/UX and Web Design', 'Wireframes, prototypes, and polished interfaces for websites and apps.'],
-    ['Web and Mobile Development', 'Next.js, TypeScript, React Native, and Flutter builds from idea to launch.'],
+    ['Product Design and UI/UX', 'Figma flows, prototypes, and polished interfaces for mobile and web products.'],
+    ['AI-Assisted Product Building', 'Using AI coding tools and web technologies to turn product ideas into working experiences.'],
     ['AI Automation', 'n8n workflows, chatbots, and browser automation that save hours.'],
   ],
   education: [
