@@ -75,6 +75,7 @@ export const PROJECTS = [
   {
     "slug": "nuvora",
     "cover": "nuvora-patient-home.png",
+    "coverOrientation": "landscape",
     "shot": true,
     "title": "Nuvora",
     "category": "Product Design",
@@ -105,6 +106,7 @@ export const PROJECTS = [
       },
       {
         "src": "nuvora-doctor-portal.png",
+        "orientation": "landscape",
         "title": "Doctor portal",
         "alt": "Editable reference for the Nuvora doctor dashboard with appointments, earnings and verification state"
       }
@@ -144,6 +146,7 @@ export const PROJECTS = [
   {
     "slug": "fundi",
     "cover": "fundi-dashboard.png",
+    "coverOrientation": "landscape",
     "shot": true,
     "title": "Fundi",
     "category": "Product Design",
@@ -174,6 +177,7 @@ export const PROJECTS = [
       },
       {
         "src": "fundi-ai-insights.png",
+        "orientation": "landscape",
         "title": "AI insights",
         "alt": "Editable reference for Fundi's AI insights area with budget alert, spending pattern and savings prompt"
       }
@@ -209,6 +213,7 @@ export const PROJECTS = [
   {
     "slug": "kredo",
     "cover": "kredo-dashboard.png",
+    "coverOrientation": "landscape",
     "shot": true,
     "title": "Kredo",
     "category": "Product Design",
@@ -238,6 +243,7 @@ export const PROJECTS = [
       },
       {
         "src": "kredo-invoices.png",
+        "orientation": "landscape",
         "title": "Invoice workspace",
         "alt": "Editable reference for Kredo's invoice table with issue date, due date, amount and payment status"
       }
@@ -278,6 +284,7 @@ export const PROJECTS = [
   {
     "slug": "flowtrack",
     "cover": "flowtrack-board.png",
+    "coverOrientation": "landscape",
     "shot": true,
     "title": "FlowTrack",
     "category": "Product Design",
@@ -307,6 +314,7 @@ export const PROJECTS = [
       },
       {
         "src": "flowtrack-calendar.png",
+        "orientation": "landscape",
         "title": "Team calendar",
         "alt": "Editable reference for FlowTrack's calendar with sample team events and project deadlines"
       }
