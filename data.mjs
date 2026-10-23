@@ -2,12 +2,12 @@
 // Style rule: no em dashes or en dashes anywhere (the build fails if one slips in).
 
 export const SITE = {
-  url: 'https://ebubechukwu-portfolio.vercel.app', // change to https://ebubesamuel.online when the domain is switched,
+  url: 'https://www.ebubesamuel.online',
   name: 'Ebubechukwu Samuel',
   short: 'Ebube.',
   title: 'AI-Powered Product Designer & Builder',
   tagline: 'I combine strong visual design with AI-assisted product building to turn ideas into useful digital experiences.',
-  description: 'Ebubechukwu Samuel combines visual design and AI-assisted product building to create thoughtful digital experiences, from product interfaces to working web apps.',
+  description: 'Ebubechukwu Samuel is an AI-powered product designer and builder in Nigeria, with 5+ years of visual design experience. He creates clear product interfaces, brand systems, and working web experiences using Figma and AI-assisted tools.',
   email: 'ebubechkwu.samuel.com@gmail.com',
   social: [
     { label: 'GitHub', url: 'https://github.com/ebubechukwusamuel' },
@@ -19,55 +19,54 @@ export const SITE = {
 };
 
 export const SERVICES = [
-  { id: 'presentation', size: 'wide', dark: true, title: 'Presentation Design', icon: 'slides', colors: ['#2997ff', '#5e5ce6'],
-    text: 'Pitch, corporate and consulting decks in PowerPoint, Keynote and Google Slides that tell a clear story.' },
-  { id: 'brand', size: 'wide', dark: false, title: 'Brand Identity', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
+  { id: 'uiux', size: 'wide', dark: true, title: 'Product Design & UI/UX', icon: 'layout', colors: ['#2997ff', '#5e5ce6'],
+    text: 'User flows, prototypes, and polished mobile and web interfaces shaped around a clear user problem.' },
+  { id: 'web', size: 'wide', dark: false, title: 'AI-Assisted Product Building', icon: 'code', colors: ['#30d158', '#0a84ff'],
+    text: 'I use AI coding tools to turn product ideas and designs into working web experiences, then refine the details.' },
+  { id: 'brand', size: 'third', dark: false, title: 'Brand Identity', icon: 'palette', colors: ['#bf5af2', '#ff375f'],
     text: 'Logos, color palettes, typography and guidelines that make a business memorable and consistent.' },
   { id: 'graphic', size: 'third', dark: false, title: 'Graphic Design', icon: 'image', colors: ['#ff9f0a', '#ff375f'],
     text: 'Flyers, banners, social media graphics and event materials for print and digital.' },
+  { id: 'mobile', size: 'third', dark: false, title: 'Mobile Apps', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
+    text: 'Mobile-first product experiences for iOS and Android, from onboarding to everyday use.' },
+  { id: 'presentation', size: 'third', dark: true, title: 'Presentation Design', icon: 'slides', colors: ['#2997ff', '#5e5ce6'],
+    text: 'Pitch, corporate and consulting decks in PowerPoint, Keynote and Google Slides that tell a clear story.' },
   { id: 'data', size: 'third', dark: true, title: 'Infographics & Data Visuals', icon: 'chart', colors: ['#30d158', '#0a84ff'],
     text: 'Complex data and ideas turned into clear infographics and visual stories people understand.' },
-  { id: 'uiux', size: 'third', dark: false, title: 'UI/UX & Web Design', icon: 'layout', colors: ['#64d2ff', '#30d158'],
-    text: 'Wireframes, prototypes and polished interface designs for websites, portfolios and stores.' },
-  { id: 'web', size: 'third', dark: true, title: 'Web Development', icon: 'code', colors: ['#2997ff', '#5e5ce6'],
-    text: 'Fast, responsive websites and full-stack web apps built with Next.js and TypeScript.' },
-  { id: 'mobile', size: 'third', dark: false, title: 'Mobile Apps', icon: 'phone', colors: ['#ff9f0a', '#ff375f'],
-    text: 'Cross-platform iOS and Android apps with React Native, Expo and Flutter.' },
   { id: 'ai', size: 'third', dark: true, title: 'AI Automation', icon: 'chat', colors: ['#30d158', '#0a84ff'],
     text: 'Workflow automations and chatbots with n8n, AI and browser automation that save time.' },
 ];
-
 export const PROJECTS = [
   {
     slug: 'smart-pocket', cover: 'smart-pocket-home.png', shot: true,
     title: 'Smart Pocket', category: 'Product Design', filters: ['design'],
-    summary: 'A personal finance concept that helps people organise one main account into clear spending, saving, and investment pockets.',
-    overview: 'Smart Pocket explores a simpler way to manage money: keep one main account, then assign income to named pockets for everyday spending, priorities, savings, and investing. The mobile experience brings balances, budgets, progress, and automatic allocation into one place.',
-    challenge: 'People often manage several goals from the same income. Smart Pocket explores a way to plan that money using one main account and clear pockets for different needs.',
-    approach: 'I designed the key journey from setting monthly income to splitting it into pockets, checking spend and remaining balances, and viewing investments. The screens bring the overall balance and unallocated money forward, then make progress in each pocket easy to scan.',
-    nextSteps: 'Next, I would test the pocket model and auto-split setup with people who manage monthly income. I would also validate the language for balances versus budgets, then refine error states, accessibility, and trust cues based on what people find confusing.',
+    summary: 'A mobile finance concept that helps people give each part of one income a clear purpose through named money pockets.',
+    overview: 'Smart Pocket is a mobile finance concept for people who manage several priorities from one income. Set income and timing, split money into named pockets, then track what is available and spent. Auto-split rules make the plan visible. The Invest tab clearly shows that investing is not open yet and offers learning content while a licensed partner is not connected.',
+    challenge: 'One income has to cover bills, everyday spending, emergencies, and personal goals. Without a clear plan, it can be hard to see what money is already committed and what is still free to use.',
+    approach: 'I mapped the journey from income setup to assigning money to pockets, then made the home screen show total balance, unallocated money, monthly spending, and pocket progress. I kept auto-split visible instead of burying it in settings. For investing, I used a clear unavailable state and learning content rather than presenting unverified returns as live financial information.',
+    nextSteps: 'I would test whether people understand the difference between total balance, unallocated money, and pocket balances; verify that the displayed amounts reconcile across screens; and run usability tests on income setup and auto-split. I would use those findings to refine the wording, accessibility, error states, and trust cues. User testing and live financial integrations have not been completed yet.',
     decisions: [
-      'Show total balance and unallocated money near the top, so the starting point is clear.',
-      'Use named pockets with remaining amounts and progress bars to make budget status quick to scan.',
-      'Keep spending, savings, and locked pockets filterable in the Pockets screen.',
-      'Give investing its own space with a portfolio summary and fund details.',
-      'Make automatic allocation visible rather than hiding it inside settings.'
+      'Keep total balance and unallocated money near the top to show what has not been assigned.',
+      'Use named pockets with remaining amounts and progress bars so budget status is easy to scan.',
+      'Make spending, savings, and locked states filterable on the Pockets screen.',
+      'Show auto-split status on the home screen so people can tell when allocation rules are active.',
+      'Keep investing unavailable until a licensed partner is connected, and use the Invest tab for education rather than unverified balances or returns.'
     ],
     screens: [
-      { src: 'smart-pocket-home.png', title: 'Home dashboard', alt: 'Smart Pocket home screen with total balance, unallocated money, spending summary, pockets, and auto-split status' },
-      { src: 'smart-pocket-pockets.png', title: 'Pockets overview', alt: 'Smart Pocket pockets screen with spending, savings, and locked filters and category balances' },
-      { src: 'smart-pocket-invest.png', title: 'Investments', alt: 'Smart Pocket investments screen with portfolio value and fund choices' },
-      { src: 'smart-pocket-income-setup.png', title: 'Income setup', alt: 'Smart Pocket income setup screen with monthly income and income timing fields' }
+      { src: 'smart-pocket-home.png', title: 'Home dashboard', alt: 'Smart Pocket home screen showing total balance, unallocated money, spending summary, pocket balances, and auto-split status' },
+      { src: 'smart-pocket-pockets.png', title: 'Pockets overview', alt: 'Smart Pocket pockets screen with All, Spending, Savings, and Locked filters and pocket balances' },
+      { src: 'smart-pocket-income-setup.png', title: 'Income setup', alt: 'Smart Pocket income setup screen with monthly income, income type, and income timing fields' },
+      { src: 'smart-pocket-invest.png', title: 'Invest availability state', alt: 'Smart Pocket Invest screen explaining that investing is not open yet and providing financial learning content' }
     ],
     caption: 'Home dashboard screen from the Smart Pocket Figma concept.',
     tags: ['Product Design', 'Figma', 'Personal Finance', 'Mobile UI', 'Interaction Design'],
     features: [
-      'Set monthly income and income timing before assigning money.',
-      'Organise money into pockets such as rent, emergency, transport, family, giving, fun, and eating out.',
-      'See pocket amounts and spending progress from the home dashboard.',
-      'Review spending categories and transactions in one place.',
-      'Explore an Investments area with a portfolio summary and fund information.',
-      'See when auto-split is enabled and how income is allocated across planned pockets.'
+      'Set monthly income, income type, and expected income timing before building a plan.',
+      'Organise one balance into named pockets such as rent, emergency, transport, family, giving, fun, and eating out.',
+      'View remaining pocket amounts and spending progress from the home dashboard.',
+      'Review spending activity and transaction categories in one place.',
+      'Set and display auto-split rules for planned pockets.',
+      'Show a clear unavailable state and financial learning content for investing until a licensed investment partner is connected.'
     ],
     links: [{ label: 'View Figma screens', url: 'https://www.figma.com/design/TRAToW0hPwhjmdrgJLd8Lq' }]
   },
