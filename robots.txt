@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ebubechukwu-portfolio.vercel.app/sitemap.xml
+Sitemap: https://www.ebubesamuel.online/sitemap.xml
