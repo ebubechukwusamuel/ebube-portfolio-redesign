@@ -72,12 +72,6 @@ export const PROJECTS = [
     ],
     links: [{ label: 'View Figma screens', url: 'https://www.figma.com/design/TRAToW0hPwhjmdrgJLd8Lq' }]
   },
-  { slug: 'kredo', shot: true, title: 'Kredo', category: 'Development', filters: ['web'],
-    summary: 'All-in-one freelancer OS: proposals, contracts, invoices, time tracking, and client portal in one unified app.',
-    overview: 'Replaces 5+ tools freelancers juggle with one seamless experience. One tool covers proposals, e-signature contracts, invoicing with Paystack and Stripe, time tracking, expense management, and a client portal for collaboration.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Paystack', 'Stripe'],
-    features: ['Unified dashboard replacing 5+ freelance tools', 'Proposal and contract generation with e-signatures', 'Invoice creation with Paystack & Stripe payment processing', 'Time tracking and expense management', 'Client portal for project collaboration and file sharing'],
-    links: [{ label: 'Live Site', url: 'https://kredo-gray.vercel.app' }] },
   {
     "slug": "nuvora",
     "cover": "nuvora-patient-home.png",
