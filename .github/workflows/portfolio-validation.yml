@@ -80,7 +80,7 @@ jobs:
           NODE
 
   commit-generated-pages:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/paystack-product-designer-refresh'
+    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/paystack-product-designer-refresh')
     needs: validate
     runs-on: ubuntu-latest
     permissions:
@@ -89,6 +89,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
+          ref: paystack-product-designer-refresh
           persist-credentials: true
 
       - name: Regenerate and commit static pages
