@@ -90,7 +90,7 @@ export const PROJECTS = [
     "approach": "I built a connected product experience across patient and doctor tasks. For patients, the home screen prioritises starting a health conversation and quick access to booking, hospital search, lab reading and records. The doctor workspace keeps appointment status and earnings information visible. The interface direction uses a dark clinical palette, restrained green and cyan accents, and clear information grouping.",
     "nextSteps": "I would validate the language used in AI health guidance with healthcare professionals, test escalation and emergency states, check privacy and consent flows, and test patient onboarding and doctor booking with users. Clinical safety, user outcomes and every live integration need separate verification; the screenshots alone do not establish those results.",
     "scopeNote": "This case study focuses on navigation and product structure: ask, understand, track, and connect to human care. The AI should support health education and decision-making, not claim to replace professional diagnosis. Doctor earnings are presented as ledger records, not as a stored-value wallet.",
-    "caseNote": "These editable reference screens were recreated from the current project code because an older light-blue mockup did not match the current dark clinical interface. Names and figures are illustrative. The screens are not evidence of clinical validation or confirmed live integration status.",
+    "caseNote": "The Figma link opens the original Nuvora UI supplied for this case study, including patient, doctor and admin screens. Names and figures are illustrative. The interface is not evidence of clinical validation or confirmed live integration status.",
     "decisions": [
       "Keep the patient home focused on the next action instead of showing every health feature at once.",
       "Provide direct paths to AI consultation, doctor booking, hospital search, lab reading and health records.",
@@ -102,16 +102,16 @@ export const PROJECTS = [
       {
         "src": "nuvora-patient-home.png",
         "title": "Patient home",
-        "alt": "Editable reference for the Nuvora patient home screen, with health guide and quick actions"
+        "alt": "Original Nuvora patient home design with health guidance, appointments and quick actions"
       },
       {
         "src": "nuvora-doctor-portal.png",
         "orientation": "landscape",
         "title": "Doctor portal",
-        "alt": "Editable reference for the Nuvora doctor dashboard with appointments, earnings and verification state"
+        "alt": "Original Nuvora doctor dashboard design with appointments, earnings and verification state"
       }
     ],
-    "caption": "Nuvora patient home reference, recreated from the current app implementation.",
+    "caption": "Patient home from the original Nuvora Figma design.",
     "tags": [
       "Product Design",
       "Healthcare",
@@ -134,8 +134,8 @@ export const PROJECTS = [
         "url": "https://nuvora-kappa.vercel.app"
       },
       {
-        "label": "View editable UI references",
-        "url": "https://www.figma.com/design/tax8ZIyDdVyp4loUr5KSVP"
+        "label": "View original Nuvora Figma UI",
+        "url": "https://www.figma.com/design/Wjq3ZsyyjKVztCTJzULySI"
       },
       {
         "label": "View project source",
@@ -161,7 +161,7 @@ export const PROJECTS = [
     "approach": "I organised the core experience around a finance snapshot, recent activity, budget progress and insights. Transactions can be reviewed separately, while the AI insights area gives context to potential budget alerts, spending patterns and saving habits. Web and mobile screens follow the same dark palette and green highlight system.",
     "nextSteps": "I would test whether people understand transaction categories, budget progress and insight wording without over-trusting automated suggestions. I would also test account-link failure, duplicate transactions, stale balances, low-data states, privacy consent and how a user can correct an insight that does not match their situation. Metrics and user outcomes should only be added after real testing.",
     "scopeNote": "The AI features are framed as decision support, not financial advice. Account connection and transaction refresh states need testing against real provider responses, and all demo values must remain clearly labelled as sample content.",
-    "caseNote": "These editable reference screens were recreated from the current Fundi app structure and design tokens. The displayed transaction rows and finance figures are illustrative sample data, not real user balances or performance results.",
+    "caseNote": "The Figma link opens the original Fundi designs, including mobile screens and web dashboard states. Transaction rows and finance figures shown here are illustrative sample data, not real user balances or performance results.",
     "decisions": [
       "Put balance, income, expenses and savings rate together for a quick financial snapshot.",
       "Keep recent transactions close to the summary so users can verify what changed.",
@@ -173,16 +173,16 @@ export const PROJECTS = [
       {
         "src": "fundi-dashboard.png",
         "title": "Finance dashboard",
-        "alt": "Editable reference for Fundi's overview dashboard with balance, income, expenses, transactions, budgets and insights"
+        "alt": "Original Fundi web dashboard design with account overview, transactions, budgets and AI insights"
       },
       {
         "src": "fundi-ai-insights.png",
         "orientation": "landscape",
         "title": "AI insights",
-        "alt": "Editable reference for Fundi's AI insights area with budget alert, spending pattern and savings prompt"
+        "alt": "Original Fundi AI insights screen showing finance guidance and spending patterns"
       }
     ],
-    "caption": "Fundi dashboard reference, recreated from the current web app design tokens and information structure.",
+    "caption": "Web dashboard from the original Fundi Figma design.",
     "tags": [
       "Product Design",
       "Personal Finance",
@@ -201,8 +201,8 @@ export const PROJECTS = [
     ],
     "links": [
       {
-        "label": "View editable UI references",
-        "url": "https://www.figma.com/design/tax8ZIyDdVyp4loUr5KSVP"
+        "label": "View original Fundi Figma UI",
+        "url": "https://www.figma.com/design/KTyguYsirmN8T0GP4fIaSt"
       },
       {
         "label": "View project source",
@@ -227,7 +227,7 @@ export const PROJECTS = [
     "approach": "I structured the workspace around recurring freelance tasks and put key areas in one navigation system. The dashboard brings clients, projects, proposals and billing into view, with time tracking and invoice actions nearby. The invoice table makes status and due dates visible so pending, partial and overdue invoices can be followed up.",
     "nextSteps": "I would test the flow with working freelancers from a new client request through proposal acceptance, project work, invoicing and payment confirmation. Important edge cases include partial payments, late invoices, timer interruptions, expense corrections, duplicate submissions and payment-webhook delays. Real payment success rates or time saved should not be claimed without evidence.",
     "scopeNote": "The case study focuses on the workflow and product UI. Payment provider paths and invoice states should be validated in a test environment before claiming a production-verified payment experience.",
-    "caseNote": "These editable reference screens were recreated from the Kredo app source and its dark red-accented design system. Client names, amounts, counts and invoice rows shown are sample interface data, not real revenue or client results.",
+    "caseNote": "This separate Figma file contains editable Kredo screens built from the actual repository routes and UI patterns. Client names, amounts, counts and invoice rows are sample interface data, not real revenue or client results.",
     "decisions": [
       "Keep clients, proposals, projects, time, expenses and invoices in one workspace navigation.",
       "Show client and project counts alongside billing status to connect delivery with money owed.",
@@ -244,11 +244,11 @@ export const PROJECTS = [
       {
         "src": "kredo-invoices.png",
         "orientation": "landscape",
-        "title": "Invoice workspace",
-        "alt": "Editable reference for Kredo's invoice table with issue date, due date, amount and payment status"
+        "title": "Invoice details",
+        "alt": "Editable Kredo invoice detail screen with client information, line items, amount paid, balance due and payment action"
       }
     ],
-    "caption": "Kredo freelancer workspace reference, recreated from the current app source.",
+    "caption": "Kredo freelancer workspace, with screens mapped to the current app routes.",
     "tags": [
       "Product Design",
       "Freelancer tools",
@@ -272,8 +272,8 @@ export const PROJECTS = [
         "url": "https://kredo-gray.vercel.app"
       },
       {
-        "label": "View editable UI references",
-        "url": "https://www.figma.com/design/tax8ZIyDdVyp4loUr5KSVP"
+        "label": "View complete Kredo Figma UI",
+        "url": "https://www.figma.com/design/eox5O3WS4hPhu0i3oBo6ON"
       },
       {
         "label": "View source code",
@@ -293,12 +293,12 @@ export const PROJECTS = [
       "design"
     ],
     "summary": "A team project workspace for task boards, delivery planning, collaboration and activity tracking.",
-    "overview": "FlowTrack is a project and task management platform with a dashboard, task boards, team membership, calendar, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.",
+    "overview": "FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.",
     "challenge": "When team tasks, deadlines, comments and ownership live in separate tools, it is difficult to see what is moving, what is blocked and who needs follow-up. FlowTrack brings project status and collaboration into a shared workspace.",
-    "approach": "I focused the board on clear task states and team context. Project metrics make the workload scannable, while task cards keep the title, category, assignee and due-date information together. The calendar gives a second view for deadlines and team commitments, complementing the board rather than replacing it.",
+    "approach": "I focused the board on clear task states and team context. Project metrics make the workload scannable, while task cards keep the title, priority, assignee and due-date information together. The My tasks view then helps each person focus on their own assignments and status. Chat, activity, team and submissions flows support collaboration around the work.",
     "nextSteps": "I would validate the board with teams using realistic task volumes and test dragging tasks between states, task ownership changes, invitations, empty boards, overdue states, mobile layout and permissions. Chat and voice/video call flows also need reliability and accessibility testing before claiming team outcomes.",
     "scopeNote": "The portfolio shows the product's interface and intended workflows. Team names, task counts, event labels and status examples are illustrative and should not be treated as live activity or evidence of productivity improvement.",
-    "caseNote": "These editable reference screens were recreated from the FlowTrack app source and current dark/lime design tokens. Task names, counts, dates and activity shown are illustrative sample data.",
+    "caseNote": "This separate Figma file contains editable FlowTrack screens mapped from the actual repository routes and current dark/lime UI. Task names, counts, dates and activity are sample data. The calendar route in the current code redirects to the dashboard, so the screen set focuses on implemented project and collaboration routes.",
     "decisions": [
       "Use visible task columns to make status and work-in-progress easier to scan.",
       "Keep assignee, category and due date on the task card so basic decisions do not require opening every task.",
@@ -315,31 +315,31 @@ export const PROJECTS = [
       {
         "src": "flowtrack-calendar.png",
         "orientation": "landscape",
-        "title": "Team calendar",
-        "alt": "Editable reference for FlowTrack's calendar with sample team events and project deadlines"
+        "title": "My tasks",
+        "alt": "FlowTrack My tasks screen showing assigned tasks, due dates, priorities and current status"
       }
     ],
-    "caption": "FlowTrack project board reference, recreated from the current app source.",
+    "caption": "FlowTrack project board built from the actual project route and task UI patterns.",
     "tags": [
       "Product Design",
       "Project management",
       "Kanban",
       "Team collaboration",
-      "Calendar",
+      "Task management",
       "Next.js"
     ],
     "features": [
       "Project board with task status, assignees and due dates.",
       "My tasks and team workload views.",
-      "Project calendar for deadlines and shared commitments.",
+      "Due-date and priority tracking across assigned tasks and project boards.",
       "Organization and member management flows.",
       "Activity feed and submission review workflows.",
       "Chat and voice/video collaboration routes in the product code."
     ],
     "links": [
       {
-        "label": "View editable UI references",
-        "url": "https://www.figma.com/design/tax8ZIyDdVyp4loUr5KSVP"
+        "label": "View complete FlowTrack Figma UI",
+        "url": "https://www.figma.com/design/fSxOtiUY2Y931rZ7wOaDWf"
       },
       {
         "label": "View source code",
