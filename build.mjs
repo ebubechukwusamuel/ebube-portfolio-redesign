@@ -241,12 +241,12 @@ function projectPages() {
 <header class="phead reveal"><p class="eyebrow">${esc(p.category)}</p><h1 class="display ptitle">${esc(p.title)}</h1><p class="lead left big">${esc(p.overview)}</p>${btns ? `<div class="pbtns">${btns}</div>` : ''}</header>
 <figure class="hero-img reveal"><img src="/assets/projects/${p.cover || (p.slug + '.jpg')}" alt="${esc(p.title)} ${p.cover ? 'product screen' : p.shot ? 'project cover' : 'cover illustration'}" width="${p.cover ? 360 : 1600}" height="${p.cover ? 820 : 900}" decoding="async"><figcaption>${p.caption ? esc(p.caption) : p.shot ? '' : 'Cover illustration.'}${design && p.links.some((l) => l.url.includes('behance.net')) ? ' See the full project on Behance.' : ''}</figcaption></figure>
 
-\${p.challenge ? \`<section class="pblock reveal"><h2>Problem space</h2><p>\${esc(p.challenge)}</p></section>\` : ''}
-\${p.approach ? \`<section class="pblock reveal"><h2>Design approach</h2><p>\${esc(p.approach)}</p></section>\` : ''}
-\${p.decisions && p.decisions.length ? \`<section class="pblock reveal"><h2>Key design decisions</h2><ul class="feats">\${p.decisions.map((d) => \`<li>\${esc(d)}</li>\`).join('')}</ul></section>\` : ''}
-\${p.screens && p.screens.length ? \`<section class="pblock reveal"><h2>Product screens</h2><div class="screen-grid">\${p.screens.map((s) => \`<figure class="screen-card"><img src="/assets/projects/\${esc(s.src)}" alt="\${esc(s.alt)}" width="360" height="820" loading="lazy" decoding="async"><figcaption>\${esc(s.title)}</figcaption></figure>\`).join('')}</div></section>\` : ''}
-\${p.cover ? \`<p class="case-note">This is a design concept. Amounts and returns shown in the screens are sample interface content, not live financial data.</p>\` : ''}
-\${p.nextSteps ? \`<section class="pblock reveal"><h2>What I would validate next</h2><p>\${esc(p.nextSteps)}</p></section>\` : ''}
+${p.challenge ? `<section class="pblock reveal"><h2>Problem space</h2><p>${esc(p.challenge)}</p></section>` : ''}
+${p.approach ? `<section class="pblock reveal"><h2>Design approach</h2><p>${esc(p.approach)}</p></section>` : ''}
+${p.decisions && p.decisions.length ? `<section class="pblock reveal"><h2>Key design decisions</h2><ul class="feats">${p.decisions.map((d) => `<li>${esc(d)}</li>`).join('')}</ul></section>` : ''}
+${p.screens && p.screens.length ? `<section class="pblock reveal"><h2>Product screens</h2><div class="screen-grid">${p.screens.map((s) => `<figure class="screen-card"><img src="/assets/projects/${esc(s.src)}" alt="${esc(s.alt)}" width="360" height="820" loading="lazy" decoding="async"><figcaption>${esc(s.title)}</figcaption></figure>`).join('')}</div></section>` : ''}
+${p.cover ? `<p class="case-note">This is a design concept. Amounts and returns shown in the screens are sample interface content, not live financial data.</p>` : ''}
+${p.nextSteps ? `<section class="pblock reveal"><h2>What I would validate next</h2><p>${esc(p.nextSteps)}</p></section>` : ''}
 <section class="pblock reveal"><h2>${design ? 'Focus areas' : 'Tech stack'}</h2><div class="tags big">${p.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join('')}</div></section>
 <section class="pblock reveal"><h2>Key features</h2><ul class="feats">${p.features.map((f) => `<li>${esc(f)}</li>`).join('')}</ul></section>
 <nav class="pager reveal" aria-label="More projects">
