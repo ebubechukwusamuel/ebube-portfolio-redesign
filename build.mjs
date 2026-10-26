@@ -150,7 +150,7 @@ function home() {
 <div class="hero-cta reveal" style="--d:.24s"><a class="btn btn-primary btn-lg" href="/contact">Contact Me</a><a class="textlink" href="/projects">View my work <span aria-hidden="true">&rsaquo;</span></a></div>
 </div></section>
 
-${anchor}
+<section class="marquee" aria-label="Selected projects"><div class="marquee-track"><div class="marquee-set">${marquee}</div><div class="marquee-set" aria-hidden="true">${PROJECTS.map((p) => `<a tabindex="-1" href="/projects/${p.slug}">${esc(p.title)}</a>`).join('')}</div></div></section>
 
 <section class="tool-ticker" aria-label="Product design and development tools">
   <div class="container">
