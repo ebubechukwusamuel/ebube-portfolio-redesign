@@ -43,6 +43,18 @@ jobs:
             'index.html',
             'projects/index.html',
             'projects/smart-pocket/index.html',
+            'projects/kredo/index.html',
+            'projects/flowtrack/index.html',
+            'projects/nuvora/index.html',
+            'assets/projects/kredo-dashboard.png',
+            'assets/projects/kredo-projects.png',
+            'assets/projects/kredo-invoices.png',
+            'assets/projects/flowtrack-project-detail.png',
+            'assets/projects/flowtrack-dashboard.png',
+            'assets/projects/flowtrack-team.png',
+            'assets/projects/nuvora-patient-home.png',
+            'assets/projects/nuvora-ai-consultation.png',
+            'assets/projects/nuvora-appointments.png',
             'assets/projects/smart-pocket-home.png',
             'assets/projects/smart-pocket-pockets.png',
             'assets/projects/smart-pocket-invest.png',
@@ -56,6 +68,22 @@ jobs:
           const home = fs.readFileSync('index.html', 'utf8');
           const projects = fs.readFileSync('projects/index.html', 'utf8');
           const smartPocket = fs.readFileSync('projects/smart-pocket/index.html', 'utf8');
+          const projectCases = Object.fromEntries(['kredo', 'flowtrack', 'nuvora'].map((slug) => [slug, fs.readFileSync(`projects/${slug}/index.html`, 'utf8')]));
+          const toolNames = [
+            'Claude Code', 'OpenAI Codex', 'OpenCode', 'Google Antigravity', 'Cursor', 'GitHub Copilot',
+            'Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Canva', 'Framer', 'Miro', 'Visual Studio Code',
+            'Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'GitHub', 'Prisma', 'Supabase', 'Vercel',
+            'Paystack', 'Stripe', 'n8n', 'Zapier', 'Google Sheets', 'Clay', 'Apollo.io', 'HubSpot', 'Google Analytics',
+          ];
+          if (!home.includes('tool-ticker-track') || !home.includes('cdn.simpleicons.org')) throw new Error('Moving tool logo ticker is missing.');
+          for (const name of toolNames) {
+            if (!home.includes(name)) throw new Error(`Tool logo ticker is missing ${name}`);
+          }
+          for (const slug of ['kredo', 'flowtrack', 'nuvora']) {
+            if (!projectCases[slug].includes('Product screens')) throw new Error(`Case-study screen section missing in ${slug}`);
+            if (!projects.includes(`href="/projects/${slug}"`)) throw new Error(`${slug} is missing from the projects listing`);
+          }
+          if (projectCases.flowtrack.includes('flowtrack-calendar.png')) throw new Error('FlowTrack case study incorrectly references the calendar screenshot.');
 
           if (!home.includes('Smart Pocket')) throw new Error('Smart Pocket is missing from the home page');
           if (!projects.includes('href="/projects/smart-pocket"')) throw new Error('Smart Pocket is missing from the projects listing');

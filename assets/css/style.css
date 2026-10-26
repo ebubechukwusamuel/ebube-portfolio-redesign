@@ -395,8 +395,14 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#ff453a}
 .tool-ticker-track{display:flex;width:max-content;animation:tool-ticker-scroll 72s linear infinite;will-change:transform}
 .tool-ticker:hover .tool-ticker-track{animation-play-state:paused}
 .tool-ticker-set{display:flex;align-items:center;gap:12px;padding-right:12px}
-.tool-pill{display:inline-flex;align-items:center;white-space:nowrap;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);border-radius:999px;padding:9px 15px;color:#d2d2d7;font-size:13px;font-weight:500;letter-spacing:-.01em;transition:background .2s,border-color .2s,color .2s}
+.tool-pill{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);border-radius:999px;padding:9px 15px;color:#d2d2d7;font-size:13px;font-weight:500;letter-spacing:-.01em;transition:background .2s,border-color .2s,color .2s}
 .tool-pill:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff}
+.tool-logo-box{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:0 0 23px;width:23px;height:23px;border-radius:7px;overflow:hidden}
+.tool-logo-image{display:block;width:22px;height:22px;object-fit:contain;flex:0 0 auto}
+.tool-logo-image[hidden]{display:none!important}
+.tool-logo-fallback{display:none;align-items:center;justify-content:center;min-width:22px;width:22px;height:22px;border-radius:6px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);color:var(--tool-brand,#fff);font-size:9px;line-height:1;font-weight:800;letter-spacing:-.04em}
+.tool-logo-box.is-fallback .tool-logo-fallback{display:inline-flex}
+.tool-name{color:inherit}
 @keyframes tool-ticker-scroll{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.tool-ticker-track{animation:none}.tool-ticker-window{overflow-x:auto;mask-image:none;-webkit-mask-image:none}.tool-ticker-track{width:max-content}}
 @media(max-width:600px){.tool-ticker{padding:22px 0 24px}.tool-ticker-label{margin-bottom:15px}.tool-pill{font-size:12px;padding:8px 12px}}

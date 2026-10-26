@@ -30,6 +30,49 @@ const ICONS = {
 };
 const icon = (name) => `<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
+const TOOL_BRANDS = {
+  "Claude Code": { slug: "claude", color: "D97757", mark: "CC" },
+  "OpenAI Codex": { slug: "openai", color: "FFFFFF", mark: "OX" },
+  "OpenCode": { slug: "opencode", color: "FFFFFF", mark: "OC" },
+  "Google Antigravity": { slug: "google", color: "4285F4", mark: "G" },
+  "Cursor": { slug: "cursor", color: "FFFFFF", mark: "C" },
+  "GitHub Copilot": { slug: "githubcopilot", color: "FFFFFF", mark: "GC" },
+  "Figma": { slug: "figma", color: "F24E1E", mark: "F" },
+  "Adobe Photoshop": { slug: "adobephotoshop", color: "31A8FF", mark: "Ps" },
+  "Adobe Illustrator": { slug: "adobeillustrator", color: "FF9A00", mark: "Ai" },
+  "Canva": { slug: "canva", color: "00C4CC", mark: "Ca" },
+  "Framer": { slug: "framer", color: "FFFFFF", mark: "Fr" },
+  "Miro": { slug: "miro", color: "FFD02F", mark: "M" },
+  "Visual Studio Code": { slug: "visualstudiocode", color: "007ACC", mark: "VS" },
+  "Next.js": { slug: "nextdotjs", color: "FFFFFF", mark: "N" },
+  "React": { slug: "react", color: "61DAFB", mark: "R" },
+  "TypeScript": { slug: "typescript", color: "3178C6", mark: "TS" },
+  "Tailwind CSS": { slug: "tailwindcss", color: "06B6D4", mark: "TW" },
+  "Node.js": { slug: "nodedotjs", color: "5FA04E", mark: "N" },
+  "GitHub": { slug: "github", color: "FFFFFF", mark: "GH" },
+  "Prisma": { slug: "prisma", color: "FFFFFF", mark: "P" },
+  "Supabase": { slug: "supabase", color: "3FCF8E", mark: "S" },
+  "Vercel": { slug: "vercel", color: "FFFFFF", mark: "V" },
+  "Paystack": { slug: "paystack", color: "00C3F7", mark: "P" },
+  "Stripe": { slug: "stripe", color: "635BFF", mark: "ST" },
+  "n8n": { slug: "n8n", color: "EA4B71", mark: "n8n" },
+  "Zapier": { slug: "zapier", color: "FF4A00", mark: "Z" },
+  "Google Sheets": { slug: "googlesheets", color: "34A853", mark: "GS" },
+  "Clay": { slug: "clay", color: "FFFFFF", mark: "Cl" },
+  "Apollo.io": { slug: "apolloio", color: "FBCB51", mark: "A" },
+  "HubSpot": { slug: "hubspot", color: "FF7A59", mark: "HS" },
+  "Google Analytics": { slug: "googleanalytics", color: "E37400", mark: "GA" }
+};
+
+const toolPill = (name) => {
+  const brand = TOOL_BRANDS[name];
+  if (!brand) throw new Error(`Missing brand mark for tool: ${name}`);
+  const src = brand.slug ? `https://cdn.simpleicons.org/${brand.slug}/${brand.color}?viewbox=auto` : '';
+  const logo = src ? `<img class="tool-logo-image" src="${src}" alt="" aria-hidden="true" decoding="async" onerror="this.hidden=true;this.parentElement.classList.add('is-fallback')">` : '';
+  return `<span class="tool-pill" role="listitem" title="${esc(name)}" style="--tool-brand:#${brand.color}"><span class="tool-logo-box ${src ? '' : 'is-fallback'}">${logo}<span class="tool-logo-fallback" aria-hidden="true">${esc(brand.mark)}</span></span><span class="tool-name">${esc(name)}</span></span>`;
+};
+
+
 
 function jpegSize(file) {
   try {
@@ -158,8 +201,8 @@ function home() {
   </div>
   <div class="tool-ticker-window">
     <div class="tool-ticker-track">
-      <div class="tool-ticker-set">${TOOL_TICKER.map((name) => `<span class="tool-pill">${esc(name)}</span>`).join('')}</div>
-      <div class="tool-ticker-set" aria-hidden="true">${TOOL_TICKER.map((name) => `<span class="tool-pill">${esc(name)}</span>`).join('')}</div>
+      <div class="tool-ticker-set" role="list" aria-label="Tools">${TOOL_TICKER.map(toolPill).join('')}</div>
+      <div class="tool-ticker-set" aria-hidden="true">${TOOL_TICKER.map(toolPill).join('')}</div>
     </div>
   </div>
 </section>
