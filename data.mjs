@@ -242,12 +242,14 @@ export const PROJECTS = [
       {
         "src": "kredo-projects.png",
         "title": "Project workspace",
-        "alt": "Kredo project list in the dark freelancer workspace, showing project records and their status"
+        "alt": "Kredo project list in the dark freelancer workspace, showing project records and their status",
+        "orientation": "landscape"
       },
       {
         "src": "kredo-invoices.png",
         "title": "Invoice and payment detail",
-        "alt": "Kredo invoice detail with totals, line items, due date, payment history and remaining balance"
+        "alt": "Kredo invoice detail with totals, line items, due date, payment history and remaining balance",
+        "orientation": "landscape"
       }
     ],
     "caption": "Kredo dashboard showing client and project totals, proposals, invoices and the active timer.",
@@ -312,12 +314,14 @@ export const PROJECTS = [
       {
         "src": "flowtrack-dashboard.png",
         "title": "Member dashboard",
-        "alt": "FlowTrack member dashboard with overdue alert, assigned task metrics, task states and upcoming deadlines"
+        "alt": "FlowTrack member dashboard with overdue alert, assigned task metrics, task states and upcoming deadlines",
+        "orientation": "landscape"
       },
       {
         "src": "flowtrack-team.png",
         "title": "Team management",
-        "alt": "FlowTrack team management screen in the dark workspace with lime accents"
+        "alt": "FlowTrack team management screen in the dark workspace with lime accents",
+        "orientation": "landscape"
       }
     ],
     "caption": "FlowTrack project detail showing tasks, owners, due dates, status, submissions and row actions.",
