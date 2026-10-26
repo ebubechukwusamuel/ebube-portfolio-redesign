@@ -2,7 +2,7 @@
 // Style rule: no em dashes or en dashes anywhere (the build fails if one slips in).
 
 export const SITE = {
-  url: 'https://www.ebubesamuel.online',
+  url: 'https://ebubeportfolio.vercel.app',
   name: 'Ebubechukwu Samuel',
   short: 'Ebube.',
   title: 'AI-Powered Product Designer & Builder',
