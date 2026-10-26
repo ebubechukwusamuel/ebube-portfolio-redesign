@@ -6,7 +6,7 @@ const hashFile = (f) => { try { return crypto.createHash('md5').update(fs.readFi
 const ASSET_V = { css: hashFile('assets/css/style.css'), js: hashFile('assets/js/main.js') };
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, SERVICES, PROJECTS, FILTERS, TESTIMONIALS, ABOUT, EXPERIENCE, FAQS } from './data.mjs';
+import { SITE, SERVICES, PROJECTS, FILTERS, TESTIMONIALS, ABOUT, EXPERIENCE, FAQS, TOOL_TICKER } from './data.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -150,7 +150,19 @@ function home() {
 <div class="hero-cta reveal" style="--d:.24s"><a class="btn btn-primary btn-lg" href="/contact">Contact Me</a><a class="textlink" href="/projects">View my work <span aria-hidden="true">&rsaquo;</span></a></div>
 </div></section>
 
-<section class="marquee" aria-label="Selected projects"><div class="marquee-track"><div class="marquee-set">${marquee}</div><div class="marquee-set" aria-hidden="true">${PROJECTS.map((p) => `<a tabindex="-1" href="/projects/${p.slug}">${esc(p.title)}</a>`).join('')}</div></div></section>
+${anchor}
+
+<section class="tool-ticker" aria-label="Product design and development tools">
+  <div class="container">
+    <p class="tool-ticker-label">Tools I use to design and build</p>
+  </div>
+  <div class="tool-ticker-window">
+    <div class="tool-ticker-track">
+      <div class="tool-ticker-set">${TOOL_TICKER.map((name) => `<span class="tool-pill">${esc(name)}</span>`).join('')}</div>
+      <div class="tool-ticker-set" aria-hidden="true">${TOOL_TICKER.map((name) => `<span class="tool-pill">${esc(name)}</span>`).join('')}</div>
+    </div>
+  </div>
+</section>
 
 <section class="section light" id="services"><div class="container">
 <div class="shead reveal"><p class="eyebrow">My Services</p><h2 class="display">What I do.</h2></div>

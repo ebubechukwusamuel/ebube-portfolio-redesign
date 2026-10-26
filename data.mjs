@@ -512,3 +512,6 @@ export const FAQS = [
   ['Do you offer revisions?', 'Yes. Revisions are part of the process, and we agree on how many are included before the project starts.'],
   ['How do we get started?', 'Send me a message through the form or email me directly. Tell me about your project, your goals, and your deadline, and I will get back to you.'],
 ];
+
+
+export const TOOL_TICKER = ["Claude Code","OpenAI Codex","OpenCode","Google Antigravity","Cursor","GitHub Copilot","Figma","Adobe Photoshop","Adobe Illustrator","Canva","Framer","Miro","Visual Studio Code","Next.js","React","TypeScript","Tailwind CSS","Node.js","GitHub","Prisma","Supabase","Vercel","Paystack","Stripe","n8n","Zapier","Google Sheets","Clay","Apollo.io","HubSpot","Google Analytics"];
