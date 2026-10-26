@@ -75,7 +75,7 @@ export const PROJECTS = [
   {
     "slug": "nuvora",
     "cover": "nuvora-patient-home.png",
-    "coverOrientation": "landscape",
+    "coverOrientation": "portrait",
     "shot": true,
     "title": "Nuvora",
     "category": "Product Design",
@@ -84,57 +84,60 @@ export const PROJECTS = [
       "ai",
       "web"
     ],
-    "summary": "An AI-assisted healthcare platform designed to help people understand health concerns, keep track of care, and reach qualified professionals.",
-    "overview": "Nuvora is an AI and human healthcare product with separate patient, doctor and admin experiences. The current app includes a patient home, AI consultation, doctor booking, appointments, health records and timeline, with a doctor portal for schedules and earnings. The product aims to make healthcare decisions easier to navigate without presenting AI as a replacement for professional care.",
-    "challenge": "When people have a health concern, they may not know what the information means, where to go next, or how to reach the right professional. Nuvora brings guidance, health records and routes to human care into one product journey.",
-    "approach": "I built a connected product experience across patient and doctor tasks. For patients, the home screen prioritises starting a health conversation and quick access to booking, hospital search, lab reading and records. The doctor workspace keeps appointment status and earnings information visible. The interface direction uses a dark clinical palette, restrained green and cyan accents, and clear information grouping.",
-    "nextSteps": "I would validate the language used in AI health guidance with healthcare professionals, test escalation and emergency states, check privacy and consent flows, and test patient onboarding and doctor booking with users. Clinical safety, user outcomes and every live integration need separate verification; the screenshots alone do not establish those results.",
-    "scopeNote": "This case study focuses on navigation and product structure: ask, understand, track, and connect to human care. The AI should support health education and decision-making, not claim to replace professional diagnosis. Doctor earnings are presented as ledger records, not as a stored-value wallet.",
-    "caseNote": "The Figma link opens the original Nuvora UI supplied for this case study, including patient, doctor and admin screens. Names and figures are illustrative. The interface is not evidence of clinical validation or confirmed live integration status.",
+    "summary": "An AI-assisted healthcare experience connecting health questions with care navigation, doctor booking and appointments.",
+    "overview": "Nuvora is an AI-assisted healthcare product designed to help people understand a health concern and choose a next step. The patient experience connects an AI consultation with doctor discovery, booking, appointments, nearby hospitals, first aid, lab results and health history. The interface makes room for human care and clearly frames AI guidance as support rather than a replacement for a healthcare professional.",
+    "challenge": "A person who has a health question may not know which action to take, how to find an appropriate professional or where to keep track of care. I approached the experience as a navigation problem: make the next step clear, keep common care tasks close at hand and preserve a visible distinction between AI guidance and care from a qualified professional.",
+    "approach": "The home screen prioritizes Book a Doctor, AI Consultation, My Appointments, First Aid and Nearby Hospitals, while keeping a compact summary of medications, consultations and lab results. The consultation interface uses readable conversation turns with text and listening affordances, then reinforces the boundary with a clear AI guidance disclaimer. The appointments screen separates all, active and completed visits and shows status and payment context at a glance.",
+    "nextSteps": "I would review symptom language and escalation rules with qualified healthcare professionals, then test the main journeys with patients using accessible language and assistive technology. I would also validate consent and privacy controls, emergency guidance, booking changes and cancellations, failed or delayed AI responses, and the handoff from AI guidance to human care. The screens are not evidence of clinical validation or improved health outcomes.",
+    "scopeNote": "This case study documents the patient-facing interface and intended care-navigation workflows. Sample names, symptoms, conditions, appointment dates and prices are illustrative. Clinical safety, privacy, medical accuracy and live integrations require separate validation; the UI should not be interpreted as diagnosis or treatment.",
+    "caseNote": "The patient home, AI consultation and appointments screens come from the supplied Figma file. AI guidance is presented as supportive information and not as a substitute for professional medical advice.",
     "decisions": [
-      "Keep the patient home focused on the next action instead of showing every health feature at once.",
-      "Provide direct paths to AI consultation, doctor booking, hospital search, lab reading and health records.",
-      "Separate the patient portal from the doctor workspace because their tasks and permissions differ.",
-      "Show doctor earnings as a ledger with payout status, not as a wallet that holds user funds.",
-      "Use explicit human-care escalation and safety wording rather than suggesting AI replaces clinicians."
+      "Make the next action easy to find on the home screen instead of presenting every health feature with equal priority.",
+      "Separate AI consultation from doctor booking and appointments so the paths to automated guidance and human care remain clear.",
+      "Keep an AI guidance disclaimer visible in the conversation interface.",
+      "Use distinct appointment states and filters to make scheduled, completed, cancelled and pending-payment items easier to scan.",
+      "Design loading, empty, error and escalation states for health-related flows rather than treating the happy path as the whole experience."
     ],
     "screens": [
       {
-        "src": "nuvora-patient-home.png",
-        "title": "Patient home",
-        "alt": "Original Nuvora patient home design with health guidance, appointments and quick actions"
+        "src": "nuvora-ai-consultation.png",
+        "title": "AI consultation",
+        "alt": "Nuvora AI consultation screen with readable conversation turns, symptom input and an AI guidance disclaimer"
       },
       {
-        "src": "nuvora-doctor-portal.png",
-        "orientation": "landscape",
-        "title": "Doctor portal",
-        "alt": "Original Nuvora doctor dashboard design with appointments, earnings and verification state"
+        "src": "nuvora-appointments.png",
+        "title": "Appointments",
+        "alt": "Nuvora appointments screen with all, active and completed filters and visible appointment statuses"
       }
     ],
-    "caption": "Patient home from the original Nuvora Figma design.",
+    "caption": "Nuvora patient home with quick actions for doctor booking, AI consultation, appointments, first aid and nearby hospitals.",
     "tags": [
       "Product Design",
-      "Healthcare",
+      "Healthcare UX",
       "AI-assisted product",
-      "Patient experience",
-      "Doctor portal",
-      "Next.js"
+      "Mobile interface",
+      "Care navigation",
+      "Patient experience"
     ],
     "features": [
-      "Patient home with quick access to health conversation and care tasks.",
-      "AI consultation and plain-language health guidance experience.",
-      "Doctor discovery, booking and appointment management routes.",
-      "Health timeline, prescriptions, lab reader and personal records.",
-      "Separate doctor workspace for schedules, appointments and earnings history.",
-      "Admin and operational routes for platform management."
+      "Patient home with quick access to AI consultation and common care tasks.",
+      "AI consultation interface with text, listening and conversation-history states.",
+      "Doctor discovery and booking flows.",
+      "Appointment list with status filters and appointment detail states.",
+      "Nearby hospitals, first aid, lab results, medication and health timeline routes.",
+      "Clear boundary between AI guidance and professional medical care."
     ],
     "links": [
       {
-        "label": "Open Nuvora app",
+        "label": "Open Nuvora",
         "url": "https://nuvora-kappa.vercel.app"
       },
       {
-        "label": "View original Nuvora Figma UI",
+        "label": "View Nuvora screens in Figma",
+        "url": "https://www.figma.com/design/rrXQDVoHhWJrgNlfSNMyfg/Kredo-and-FlowTrack-Screens"
+      },
+      {
+        "label": "View original Nuvora design file",
         "url": "https://www.figma.com/design/Wjq3ZsyyjKVztCTJzULySI"
       },
       {
@@ -221,50 +224,49 @@ export const PROJECTS = [
       "web",
       "design"
     ],
-    "summary": "A freelancer workspace that connects client management, proposals, projects, time tracking, expenses and invoicing.",
-    "overview": "Kredo brings core freelance operations into one workspace. The current app includes client and request flows, proposal management, project tracking, billable time, expenses and invoice status. Instead of jumping between separate tools, a freelancer can follow work from a new client request through delivery and payment follow-up.",
-    "challenge": "Freelancers often handle client details, proposals, project work, time, expenses and payment reminders in separate places. That makes it harder to see what needs action and what has already been billed or paid.",
-    "approach": "I structured the workspace around recurring freelance tasks and put key areas in one navigation system. The dashboard brings clients, projects, proposals and billing into view, with time tracking and invoice actions nearby. The invoice table makes status and due dates visible so pending, partial and overdue invoices can be followed up.",
-    "nextSteps": "I would test the flow with working freelancers from a new client request through proposal acceptance, project work, invoicing and payment confirmation. Important edge cases include partial payments, late invoices, timer interruptions, expense corrections, duplicate submissions and payment-webhook delays. Real payment success rates or time saved should not be claimed without evidence.",
-    "scopeNote": "The case study focuses on the workflow and product UI. Payment provider paths and invoice states should be validated in a test environment before claiming a production-verified payment experience.",
-    "caseNote": "This separate Figma file contains editable Kredo screens built from the actual repository routes and UI patterns. Client names, amounts, counts and invoice rows are sample interface data, not real revenue or client results.",
+    "summary": "A freelancer workspace that connects client requests, projects, proposals, time tracking, expenses and invoices.",
+    "overview": "Kredo is a freelancer management product built around the journey from a new client request to delivered work and payment follow-up. I designed the experience to keep client, project and billing context connected, so freelancers can find the next action without jumping between separate tools. The screen set covers the main workspace, requests, clients, projects, proposals, invoices, time tracking, expenses, onboarding, settings and client-facing invoice states.",
+    "challenge": "Freelancers often manage client details, project work, proposals, time, expenses and payment reminders in different places. I approached this as a workflow problem: how might one workspace make the status of work and money owed easier to see, from the first request through to invoice follow-up?",
+    "approach": "I grouped the main workspace around the tasks freelancers repeat: requests, clients, projects, proposals, invoices, time and expenses. The dashboard brings client and project counts, proposal volume, revenue and pending invoice amounts into one scan, with quick actions and an active timer nearby. Invoice details keep line items, tax, due date, payment history and remaining balance together. Client-facing pages separate the handoff from the internal workspace.",
+    "nextSteps": "I would test the end-to-end journey with freelancers, from receiving a request to sending a proposal, recording work, raising an invoice and confirming payment. I would also test partial payments, overdue invoices, interrupted timers, expense corrections and duplicate submissions. I would measure task completion and error rates only after observing real users; the screens alone do not prove time saved or payment performance.",
+    "scopeNote": "The screens show the product UI and its intended workflow. Client names, project counts, revenue figures, dates and payment rows are sample interface content. Paystack and Stripe payment flows, webhooks, authentication and permission handling need end-to-end verification before the portfolio claims they work reliably in production.",
+    "caseNote": "The dashboard, project list and invoice detail are exports from the supplied Figma file. Financial amounts and client records are illustrative, not live revenue or real client data.",
     "decisions": [
-      "Keep clients, proposals, projects, time, expenses and invoices in one workspace navigation.",
-      "Show client and project counts alongside billing status to connect delivery with money owed.",
-      "Make time tracking visible on the dashboard so billable work is easier to record.",
-      "Use explicit invoice states such as sent, paid, partial and overdue to support clear follow-up.",
-      "Treat payment confirmation, duplicate submissions and partial payment as states that need verification, not just polished success screens."
+      "Organize the workspace around the client-to-payment workflow instead of making users manage separate mini tools.",
+      "Show client, project, proposal and invoice status together so work and payment follow-up can be understood in one scan.",
+      "Keep invoice totals, due dates, payment history and outstanding balance in the same detail view.",
+      "Surface quick actions and the active timer on the dashboard to support everyday work, not just reporting.",
+      "Separate public client-facing invoice states from internal management screens."
     ],
     "screens": [
       {
-        "src": "kredo-dashboard.png",
-        "title": "Freelancer dashboard",
-        "alt": "Editable reference for Kredo's dashboard with clients, projects, proposals, timer and invoice summary"
+        "src": "kredo-projects.png",
+        "title": "Project workspace",
+        "alt": "Kredo project list in the dark freelancer workspace, showing project records and their status"
       },
       {
         "src": "kredo-invoices.png",
-        "orientation": "landscape",
-        "title": "Invoice details",
-        "alt": "Editable Kredo invoice detail screen with client information, line items, amount paid, balance due and payment action"
+        "title": "Invoice and payment detail",
+        "alt": "Kredo invoice detail with totals, line items, due date, payment history and remaining balance"
       }
     ],
-    "caption": "Kredo freelancer workspace, with screens mapped to the current app routes.",
+    "caption": "Kredo dashboard showing client and project totals, proposals, invoices and the active timer.",
     "tags": [
       "Product Design",
       "Freelancer tools",
       "Next.js",
       "TypeScript",
-      "Time tracking",
-      "Invoicing"
+      "PostgreSQL",
+      "Paystack",
+      "Stripe"
     ],
     "features": [
-      "Client profiles and client request intake.",
-      "Proposal creation and proposal status tracking.",
-      "Project management and project detail workflows.",
-      "Billable time logging and timer controls.",
-      "Expense recording and project cost visibility.",
-      "Invoice creation with paid, sent, partial and overdue states.",
-      "Payment-related flows designed around Paystack and Stripe, pending end-to-end verification."
+      "Client request intake and client profiles.",
+      "Project lists and project detail views.",
+      "Proposal creation and status tracking.",
+      "Time tracking and expense recording.",
+      "Invoice creation with due dates, line items, tax and payment states.",
+      "Client-facing invoice and payment status pages."
     ],
     "links": [
       {
@@ -272,8 +274,8 @@ export const PROJECTS = [
         "url": "https://kredo-gray.vercel.app"
       },
       {
-        "label": "View complete Kredo Figma UI",
-        "url": "https://www.figma.com/design/eox5O3WS4hPhu0i3oBo6ON"
+        "label": "View Kredo screens in Figma",
+        "url": "https://www.figma.com/design/rrXQDVoHhWJrgNlfSNMyfg/Kredo-and-FlowTrack-Screens"
       },
       {
         "label": "View source code",
@@ -283,7 +285,7 @@ export const PROJECTS = [
   },
   {
     "slug": "flowtrack",
-    "cover": "flowtrack-board.png",
+    "cover": "flowtrack-project-detail.png",
     "coverOrientation": "landscape",
     "shot": true,
     "title": "FlowTrack",
@@ -292,54 +294,58 @@ export const PROJECTS = [
       "web",
       "design"
     ],
-    "summary": "A team project workspace for task boards, delivery planning, collaboration and activity tracking.",
-    "overview": "FlowTrack is a project and task management platform with a dashboard, project boards, team membership, assigned tasks, submissions, activity and chat routes. The task model supports ownership, status, priorities and due dates, so teams can see work that is planned, in progress, completed or overdue.",
-    "challenge": "When team tasks, deadlines, comments and ownership live in separate tools, it is difficult to see what is moving, what is blocked and who needs follow-up. FlowTrack brings project status and collaboration into a shared workspace.",
-    "approach": "I focused the board on clear task states and team context. Project metrics make the workload scannable, while task cards keep the title, priority, assignee and due-date information together. The My tasks view then helps each person focus on their own assignments and status. Chat, activity, team and submissions flows support collaboration around the work.",
-    "nextSteps": "I would validate the board with teams using realistic task volumes and test dragging tasks between states, task ownership changes, invitations, empty boards, overdue states, mobile layout and permissions. Chat and voice/video call flows also need reliability and accessibility testing before claiming team outcomes.",
-    "scopeNote": "The portfolio shows the product's interface and intended workflows. Team names, task counts, event labels and status examples are illustrative and should not be treated as live activity or evidence of productivity improvement.",
-    "caseNote": "This separate Figma file contains editable FlowTrack screens mapped from the actual repository routes and current dark/lime UI. Task names, counts, dates and activity are sample data. The calendar route in the current code redirects to the dashboard, so the screen set focuses on implemented project and collaboration routes.",
+    "summary": "A team workspace for project visibility, task ownership, deadlines, submissions and communication.",
+    "overview": "FlowTrack is a project and task management product designed around shared visibility of work. Teams can view projects, inspect task status and ownership, see personal workload in a member dashboard, manage team membership and communicate through activity, submissions and chat. The case study focuses on the interface and intended workflow, rather than claiming measured productivity outcomes.",
+    "challenge": "When task owners, deadlines, submissions and team conversations are spread across separate tools, it becomes harder to see what is moving and what needs attention. I focused on making project scope, task status and personal priorities visible without removing the context needed to act on them.",
+    "approach": "I used a consistent workspace navigation to separate projects and tasks from team and communication areas. Project detail keeps task title, assignee, due date, status, submission and actions in a single table. The member dashboard adds an overdue alert, assigned-task counts, a task-state chart and upcoming deadlines. The team screen gives membership a dedicated place, while chat, activity and submissions support work around the task itself.",
+    "nextSteps": "I would test the workflow with teams working on real projects and varied task volumes. Important scenarios include changing an assignee, updating task status, reviewing a submission, inviting a member, handling overdue work and recovering from permission or connection errors. Voice and video flows need separate reliability, accessibility and device testing. I would not claim increased productivity without a measured baseline and follow-up.",
+    "scopeNote": "The project and team names, task counts, dates, assignees and activity shown in the screens are illustrative. This screen set represents a project task table and member dashboard; it does not present the current implementation as a working calendar or claim that team productivity has been measured.",
+    "caseNote": "The project detail, member dashboard and team screens are taken from the supplied Figma file. The project detail view is a task table with status and ownership fields, not a Kanban board.",
     "decisions": [
-      "Use visible task columns to make status and work-in-progress easier to scan.",
-      "Keep assignee, category and due date on the task card so basic decisions do not require opening every task.",
-      "Pair the Kanban board with a calendar for deadline-based planning.",
-      "Keep activity and collaboration routes in the same workspace as project tasks.",
-      "Design empty, loading, permission and task-move failure states before relying on the board in team workflows."
+      "Keep task title, assignee, due date, status, submission and actions together so people can assess a task without opening every record.",
+      "Use an overdue alert and task summary on the member dashboard to point attention toward work that needs action.",
+      "Give team membership its own space instead of mixing access management into task editing.",
+      "Keep submissions, activity and chat close to project work to support handoffs and follow-up.",
+      "Show task states and deadlines explicitly, and validate permission, empty and error states before relying on the workflow."
     ],
     "screens": [
       {
-        "src": "flowtrack-board.png",
-        "title": "Project board",
-        "alt": "Editable reference for FlowTrack's Kanban-style board with task status, assignment and due dates"
+        "src": "flowtrack-dashboard.png",
+        "title": "Member dashboard",
+        "alt": "FlowTrack member dashboard with overdue alert, assigned task metrics, task states and upcoming deadlines"
       },
       {
-        "src": "flowtrack-calendar.png",
-        "orientation": "landscape",
-        "title": "My tasks",
-        "alt": "FlowTrack My tasks screen showing assigned tasks, due dates, priorities and current status"
+        "src": "flowtrack-team.png",
+        "title": "Team management",
+        "alt": "FlowTrack team management screen in the dark workspace with lime accents"
       }
     ],
-    "caption": "FlowTrack project board built from the actual project route and task UI patterns.",
+    "caption": "FlowTrack project detail showing tasks, owners, due dates, status, submissions and row actions.",
     "tags": [
       "Product Design",
       "Project management",
-      "Kanban",
-      "Team collaboration",
-      "Task management",
-      "Next.js"
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Task workflows",
+      "Team collaboration"
     ],
     "features": [
-      "Project board with task status, assignees and due dates.",
-      "My tasks and team workload views.",
-      "Due-date and priority tracking across assigned tasks and project boards.",
-      "Organization and member management flows.",
+      "Project list and project detail screens.",
+      "Task records with assignee, due date, status, submission and actions.",
+      "Member dashboard with task counts, overdue notice and upcoming deadlines.",
+      "Team membership and profile/settings routes.",
       "Activity feed and submission review workflows.",
-      "Chat and voice/video collaboration routes in the product code."
+      "Chat and voice/video collaboration screens in the design set."
     ],
     "links": [
       {
-        "label": "View complete FlowTrack Figma UI",
-        "url": "https://www.figma.com/design/fSxOtiUY2Y931rZ7wOaDWf"
+        "label": "Open FlowTrack",
+        "url": "https://flowstarck.vercel.app"
+      },
+      {
+        "label": "View FlowTrack screens in Figma",
+        "url": "https://www.figma.com/design/rrXQDVoHhWJrgNlfSNMyfg/Kredo-and-FlowTrack-Screens"
       },
       {
         "label": "View source code",
