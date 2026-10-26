@@ -76,6 +76,8 @@ jobs:
             'Paystack', 'Stripe', 'n8n', 'Zapier', 'Google Sheets', 'Clay', 'Apollo.io', 'HubSpot', 'Google Analytics',
           ];
           if (!home.includes('tool-ticker-track') || !home.includes('cdn.simpleicons.org')) throw new Error('Moving tool logo ticker is missing.');
+          if (!home.includes('www.google.com/s2/favicons?domain=antigravity.google&amp;sz=128')) throw new Error('Google Antigravity logo fallback is missing.');
+          if (!home.includes('www.google.com/s2/favicons?domain=openai.com&amp;sz=128')) throw new Error('OpenAI Codex logo fallback is missing.');
           for (const name of toolNames) {
             if (!home.includes(name)) throw new Error(`Tool logo ticker is missing ${name}`);
           }
